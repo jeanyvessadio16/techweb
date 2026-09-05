@@ -96,18 +96,18 @@ export default function HeaderNavbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 inset-x-0 w-full max-w-full z-50 transition-all duration-300 box-border",
           isScrolled
             ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs py-3"
             : "bg-white/80 backdrop-blur-sm border-b border-slate-200/50 py-4.5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full box-border">
           {/* Logo */}
           <Link
             href="/#hero"
             onClick={(e) => handleNavClick(e, "/#hero")}
-            className="flex items-center gap-2 group transition-transform active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-lg p-1"
+            className="flex items-center gap-2 group transition-transform active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-lg p-1 shrink-0"
             aria-label="Accueil TECHWEB-JY"
           >
             <Image
@@ -170,7 +170,7 @@ export default function HeaderNavbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
             aria-expanded={isMenuOpen}
-            className="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-800 hover:text-slate-950 hover:bg-slate-100 active:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors cursor-pointer"
+            className="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-800 hover:text-slate-950 hover:bg-slate-100 active:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors cursor-pointer shrink-0"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-slate-900 shrink-0" />
@@ -183,7 +183,7 @@ export default function HeaderNavbar() {
 
       {/* Volet Menu Mobile & Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-40 md:hidden overflow-hidden" role="dialog" aria-modal="true">
           {/* Overlay d'arrière-plan */}
           <div
             className="fixed inset-0 bg-slate-900/30 backdrop-blur-xs transition-opacity"
@@ -194,7 +194,7 @@ export default function HeaderNavbar() {
           {/* Tiroir / Panneau mobile */}
           <nav
             aria-label="Navigation mobile"
-            className="w-full max-w-xs min-h-screen fixed top-16 right-0 bg-white border-l border-slate-200 shadow-2xl p-6 transition-transform flex flex-col justify-between"
+            className="w-4/5 max-w-xs fixed top-16 right-0 bottom-0 bg-white border-l border-slate-200 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between box-border"
           >
             <ul className="flex flex-col space-y-2 pt-2">
               {NAVBAR_LINKS.map((link) => {

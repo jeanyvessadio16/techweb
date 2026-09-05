@@ -119,13 +119,13 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 box-border;
   }
   html {
-    @apply font-sans scroll-pt-20 sm:scroll-pt-24;
+    @apply font-sans scroll-pt-20 sm:scroll-pt-24 overflow-x-hidden w-full max-w-full;
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden w-full max-w-full;
   }
 }
