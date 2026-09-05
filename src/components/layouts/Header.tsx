@@ -10,57 +10,104 @@ import { cn } from "cn";
 import { Button } from "../ui/button";
 
 const NAVBAR_LINKS: Navbar[] = [
-  { id: 1, label: "Accueil", href: "/" },
-  { id: 2, label: "À propos", href: "/a-propos" },
-  { id: 3, label: "Services", href: "/services" },
-  { id: 4, label: "Projets", href: "/projets" },
+  { id: 1, label: "Accueil", href: "/#hero" },
+  { id: 2, label: "Services", href: "/#services" },
+  { id: 3, label: "Compétences", href: "/#competences" },
+  { id: 4, label: "À propos", href: "/#a-propos" },
+  { id: 5, label: "Projets", href: "/#projets" },
+  { id: 6, label: "Contact", href: "/#contact" },
 ];
 
 export default function HeaderNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("hero");
   const pathname = usePathname();
 
-  // Détecte le défilement pour ajouter un effet d'ombre subtil
+  // Détection du défilement & Scroll Spy des sections actives
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      setIsScrolled(window.scrollY > 15);
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // IntersectionObserver pour repérer la section visible
+    const sections = document.querySelectorAll("section[id]");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-20% 0px -55% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      sections.forEach((sec) => observer.unobserve(sec));
+    };
+  }, [pathname]);
 
   // Fermer le menu mobile lors du changement de route
   useEffect(() => {
     setIsMenuOpen(false);
   }, [pathname]);
 
-  // Empêcher le défilement quand le menu mobile est ouvert
+  // Empêcher le défilement et écouter la touche Échap quand le menu mobile est ouvert
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
     } else {
       document.body.style.overflow = "unset";
     }
+
     return () => {
       document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
     };
   }, [isMenuOpen]);
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith("/#") && pathname === "/") {
+      e.preventDefault();
+      const targetId = href.replace("/#", "");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(targetId);
+      }
+      setIsMenuOpen(false);
+    }
+  };
 
   return (
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
-          "bg-white/90 backdrop-blur-md border-b border-slate-200/80",
-          isScrolled ? "shadow-xs" : ""
+          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          isScrolled
+            ? "bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-xs py-3"
+            : "bg-white/80 backdrop-blur-sm border-b border-slate-200/50 py-4.5"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo */}
           <Link
-            href="/"
-            className="flex items-center gap-2 group transition-transform active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 rounded-lg p-1"
+            href="/#hero"
+            onClick={(e) => handleNavClick(e, "/#hero")}
+            className="flex items-center gap-2 group transition-transform active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-900 rounded-lg p-1"
             aria-label="Accueil TECHWEB-JY"
           >
             <Image
@@ -69,23 +116,29 @@ export default function HeaderNavbar() {
               width={160}
               height={44}
               priority
-              className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+              className="h-8 sm:h-10 w-auto object-contain transition-transform group-hover:scale-[1.02]"
             />
           </Link>
 
           {/* Navigation Links Desktop */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-1.5" aria-label="Navigation principale">
             {NAVBAR_LINKS.map((link) => {
-              const isActive = pathname === link.href;
+              const targetSection = link.href.replace("/#", "");
+              const isActive =
+                pathname === "/"
+                  ? activeSection === targetSection
+                  : pathname === link.href;
+
               return (
                 <Link
                   key={link.id}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className={cn(
-                    "px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-150",
+                    "px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200",
                     isActive
-                      ? "text-blue-900 bg-blue-50/80 font-semibold"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70"
+                      ? "text-blue-900 bg-blue-50/90 font-bold shadow-2xs"
+                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80"
                   )}
                 >
                   {link.label}
@@ -94,29 +147,33 @@ export default function HeaderNavbar() {
             })}
           </nav>
 
-          {/* CTA Button Desktop avec Shadcn UI Button */}
+          {/* CTA Button Desktop */}
           <div className="hidden md:flex items-center gap-3">
             <Button
               variant="default"
               size="sm"
               className="bg-blue-900 hover:bg-blue-950 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
             >
-              <Link href="/contact" className="inline-flex items-center gap-1.5">
+              <Link
+                href="/#contact"
+                onClick={(e) => handleNavClick(e, "/#contact")}
+                className="inline-flex items-center gap-1.5"
+              >
                 <span>Me contacter</span>
               </Link>
             </Button>
           </div>
 
-          {/* Bouton Menu Mobile avec Shadcn UI Button */}
+          {/* Bouton Menu Mobile */}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
+            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             aria-expanded={isMenuOpen}
-            className="md:hidden cursor-pointer rounded-lg text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+            className="md:hidden cursor-pointer rounded-xl text-slate-700 hover:bg-slate-100 hover:text-slate-900"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-red-600" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
           </Button>
         </div>
       </header>
@@ -126,7 +183,7 @@ export default function HeaderNavbar() {
         <div className="fixed inset-0 z-40 md:hidden" role="dialog" aria-modal="true">
           {/* Overlay d'arrière-plan */}
           <div
-            className="fixed inset-0 bg-slate-900/25 backdrop-blur-xs transition-opacity"
+            className="fixed inset-0 bg-slate-900/30 backdrop-blur-xs transition-opacity"
             onClick={() => setIsMenuOpen(false)}
             aria-hidden="true"
           />
@@ -134,48 +191,53 @@ export default function HeaderNavbar() {
           {/* Tiroir / Panneau mobile */}
           <nav
             aria-label="Navigation mobile"
-            className="w-sm max-w-[85vw] min-h-screen fixed top-16 sm:top-20 right-0 bg-white border-l border-slate-200 shadow-xl p-6 transition-transform"
+            className="w-full max-w-xs min-h-screen fixed top-16 right-0 bg-white border-l border-slate-200 shadow-2xl p-6 transition-transform flex flex-col justify-between"
           >
-            <ul className="flex flex-col space-y-2">
+            <ul className="flex flex-col space-y-2 pt-2">
               {NAVBAR_LINKS.map((link) => {
-                const isActive = pathname === link.href;
+                const targetSection = link.href.replace("/#", "");
+                const isActive =
+                  pathname === "/"
+                    ? activeSection === targetSection
+                    : pathname === link.href;
+
                 return (
                   <li key={link.id}>
                     <Link
                       href={link.href}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={(e) => handleNavClick(e, link.href)}
                       className={cn(
                         "flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors",
                         isActive
-                          ? "bg-blue-50 text-blue-900 font-semibold"
+                          ? "bg-blue-50 text-blue-900 font-bold"
                           : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                       )}
                     >
                       <span>{link.label}</span>
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-900" />}
+                      {isActive && <span className="w-2 h-2 rounded-full bg-blue-900" />}
                     </Link>
                   </li>
                 );
               })}
             </ul>
 
-            {/* Bouton d'action dans le menu mobile avec Shadcn UI Button */}
-            <div className="mt-6 pt-5 border-t border-slate-100">
+            {/* Bouton d'action dans le menu mobile */}
+            <div className="pb-24 pt-6 border-t border-slate-100 space-y-3">
               <Button
                 variant="default"
                 size="lg"
-                className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3 font-medium shadow-sm cursor-pointer"
+                className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3.5 font-medium shadow-xs cursor-pointer"
               >
                 <Link
-                  href="/contact"
-                  onClick={() => setIsMenuOpen(false)}
+                  href="/#contact"
+                  onClick={(e) => handleNavClick(e, "/#contact")}
                   className="flex items-center justify-center gap-2 w-full"
                 >
                   <Mail className="w-4 h-4" />
                   <span>Prendre contact</span>
                 </Link>
               </Button>
-              <p className="text-center text-xs text-slate-500 mt-3">
+              <p className="text-center text-xs text-slate-500">
                 Disponible pour missions freelance & CDI
               </p>
             </div>

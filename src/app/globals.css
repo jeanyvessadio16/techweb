@@ -121,10 +121,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans scroll-pt-20 sm:scroll-pt-24;
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans;
-  }
-  html {
-    @apply font-sans;
   }
 }

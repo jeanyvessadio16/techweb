@@ -6,12 +6,13 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
+import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
     <main className="flex-1">
       {/* Hero section */}
-      <section className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pb-32">
+      <section id="hero" className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
@@ -108,7 +109,7 @@ export default function Home() {
       <ProjectsSection />
 
       {/* Contact section */}
-      <section></section>
+      <ContactSection />
     </main>
   );
 }
