@@ -66,7 +66,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-600 transition-colors"
+                    className="text-slate-600 hover:text-blue-900 transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +86,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200/80 text-slate-600 hover:text-blue-600 hover:bg-blue-50 hover:border-blue-200 transition-all flex items-center justify-center cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200/80 text-slate-600 hover:text-blue-900 hover:bg-blue-50 hover:border-blue-200 transition-all flex items-center justify-center cursor-pointer"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -102,7 +102,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-blue-600 font-medium transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-blue-900 font-medium transition-colors cursor-pointer"
             aria-label="Retourner en haut de la page"
           >
             <span>Retour en haut</span>

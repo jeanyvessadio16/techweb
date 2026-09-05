@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, FolderGit2, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SkillsSection from "@/components/sections/SkillsSection";
+import ServicesSection from "@/components/sections/ServicesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 
@@ -17,29 +18,29 @@ export default function Home() {
             {/* Colonne gauche : Présentation & IHM */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
               {/* Titre & Hiérarchie */}
-              <div className="space-y-2.5">
-                <p className="text-base sm:text-lg font-medium text-slate-600">
-                  Bonjour, je suis
-                </p>
+              <div className="space-y-3">
+                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-semibold tracking-wide">
+                  Développeur Web & Interfaces Numériques
+                </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                  Jean-Yves <span className="text-blue-600">SADIO</span>
+                  Jean-Yves <span className="text-blue-900">SADIO</span>
                 </h1>
-                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight">
-                  Développeur Web Front-End
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-700 tracking-tight">
+                  Conception & Développement Web
                 </p>
               </div>
 
               {/* Description */}
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                Je conçois et développe des interfaces web modernes, rapides, fiables et centrées sur l’expérience utilisateur. Passionné par l’ergonomie et le code propre.
+                Je conçois et développe des interfaces web modernes, rapides, fiables et centrées sur l’expérience utilisateur. Une approche combinant sensibilité graphique et rigueur technique.
               </p>
 
-              {/* Boutons d'action (CTAs) avec Shadcn UI Button */}
-              <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-1">
+              {/* Boutons d'action (CTAs) */}
+              <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2">
                 <Button
                   variant="default"
                   size="lg"
-                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
+                  className="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
                 >
                   <Link href="/contact" className="inline-flex items-center gap-2">
                     <span>Discuter d'un projet</span>
@@ -78,12 +79,12 @@ export default function Home() {
 
                 {/* Badge flottant inférieur : Spécialité */}
                 <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0">
                     <Code className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-[11px] text-slate-500 font-medium leading-none">Spécialité</p>
-                    <p className="text-sm font-bold text-slate-900 mt-0.5">UI/UX & Front-End</p>
+                    <p className="text-sm font-bold text-slate-900 mt-0.5">UI/UX & Développement Web</p>
                   </div>
                 </div>
 
@@ -93,6 +94,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Services section */}
+      <ServicesSection />
 
       {/* Skills section */}
       <SkillsSection />

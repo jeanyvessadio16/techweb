@@ -84,7 +84,7 @@ export default function HeaderNavbar() {
                   className={cn(
                     "px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-150",
                     isActive
-                      ? "text-blue-600 bg-blue-50/80 font-semibold"
+                      ? "text-blue-900 bg-blue-50/80 font-semibold"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70"
                   )}
                 >
@@ -99,7 +99,7 @@ export default function HeaderNavbar() {
             <Button
               variant="default"
               size="sm"
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
+              className="bg-blue-900 hover:bg-blue-950 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
             >
               <Link href="/contact" className="inline-flex items-center gap-1.5">
                 <span>Me contacter</span>
@@ -147,12 +147,12 @@ export default function HeaderNavbar() {
                       className={cn(
                         "flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors",
                         isActive
-                          ? "bg-blue-50 text-blue-600 font-semibold"
+                          ? "bg-blue-50 text-blue-900 font-semibold"
                           : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                       )}
                     >
                       <span>{link.label}</span>
-                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />}
+                      {isActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-900" />}
                     </Link>
                   </li>
                 );
@@ -164,7 +164,7 @@ export default function HeaderNavbar() {
               <Button
                 variant="default"
                 size="lg"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 font-medium shadow-sm cursor-pointer"
+                className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3 font-medium shadow-sm cursor-pointer"
               >
                 <Link
                   href="/contact"

@@ -3,7 +3,7 @@ export type SkillLevel = "Débutant" | "Intermédiaire" | "Avancé" | "Expert";
 export interface SkillItem {
   id: string;
   name: string;
-  category: "frontend" | "tools" | "backend" | "design";
+  category: string;
   level?: SkillLevel;
   iconName?: string;
   color?: string;

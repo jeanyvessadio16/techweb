@@ -1,16 +1,26 @@
-export type ProjectCategory = "all" | "web" | "saas" | "ecommerce" | "mobile";
+export type ProjectCategory = "all" | "web" | "fullstack" | "design";
 
 export interface Project {
   id: string;
   title: string;
   subtitle: string;
+  category: ProjectCategory;
+  categoryLabel: string;
+  problem?: string;
+  solution?: string;
   description: string;
   imageUrl: string;
   tags: string[];
-  category: "web" | "saas" | "ecommerce" | "mobile";
-  featured: boolean;
+  features?: string[];
+  deliverables?: string[];
+  year: string;
   demoUrl?: string;
   githubUrl?: string;
-  year: string;
-  keyFeatures?: string[];
+  featured?: boolean;
+}
+
+export interface UpcomingProjectsInfo {
+  title: string;
+  description: string;
+  technologiesExplored: string[];
 }

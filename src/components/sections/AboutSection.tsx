@@ -24,9 +24,8 @@ export default function AboutSection() {
         
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
-            <UserCheck className="w-3.5 h-3.5" />
-            <span>Présentation & Vision</span>
+          <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
+            Présentation & Vision
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             {ABOUT_DATA.title}
@@ -43,7 +42,7 @@ export default function AboutSection() {
           <div className="lg:col-span-7 space-y-8">
             <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs space-y-4">
               <h3 className="text-xl font-bold text-slate-900 flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-blue-600" />
+                <span className="w-2 h-2 rounded-full bg-blue-900" />
                 Mon engagement pour vos projets
               </h3>
               
@@ -57,7 +56,7 @@ export default function AboutSection() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-6 py-3 font-semibold shadow-xs cursor-pointer"
+                  className="bg-blue-900 hover:bg-blue-950 text-white rounded-xl px-6 py-3 font-semibold shadow-xs cursor-pointer"
                 >
                   <Link href="/contact" className="inline-flex items-center gap-2">
                     <span>Me contacter</span>
@@ -80,15 +79,15 @@ export default function AboutSection() {
             {/* Timeline / Jalons de parcours */}
             <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-8 shadow-xs">
               <h3 className="text-xl font-bold text-slate-900 mb-6 flex items-center gap-2">
-                <Briefcase className="w-5 h-5 text-blue-600" />
+                <Briefcase className="w-5 h-5 text-blue-900" />
                 Parcours & Expériences
               </h3>
 
               <div className="space-y-6 relative before:absolute before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-slate-200">
                 {ABOUT_DATA.career.map((milestone) => (
                   <div key={milestone.id} className="relative pl-8">
-                    <div className="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-blue-600" />
-                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700">
+                    <div className="absolute left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-white border-2 border-blue-900" />
+                    <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-900">
                       {milestone.year}
                     </span>
                     <h4 className="text-base font-bold text-slate-900 mt-1">
@@ -114,9 +113,9 @@ export default function AboutSection() {
               {ABOUT_DATA.stats.map((stat) => (
                 <div
                   key={stat.id}
-                  className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs hover:border-blue-200 transition-colors"
+                  className="bg-white border border-slate-200/90 rounded-2xl p-5 shadow-2xs hover:border-slate-300 transition-colors"
                 >
-                  <p className="text-3xl sm:text-4xl font-extrabold text-blue-600 tracking-tight">
+                  <p className="text-3xl sm:text-4xl font-extrabold text-blue-900 tracking-tight">
                     {stat.value}
                   </p>
                   <p className="text-sm font-bold text-slate-900 mt-1">

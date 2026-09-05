@@ -1,0 +1,68 @@
+import { ServiceItem } from "@/types/services";
+
+export const SERVICES_DATA: ServiceItem[] = [
+  {
+    id: "frontend-dev",
+    title: "Développement Web Front-End",
+    badge: "Sur-Mesure & Performance",
+    shortDescription: "Applications web réactives, rapides et modernes orientées expérience utilisateur.",
+    fullDescription: "Je conçois et développe des interfaces web haute performance avec React et Next.js, garantissant un rendu fluide, un SEO optimisé et une expérience utilisateur irréprochable sur tous les supports.",
+    iconName: "Code2",
+    deliverables: [
+      "Applications Web React.js & Next.js (App Router, SSR, SSG)",
+      "Interfaces responsives pixel-perfect (Mobile, Tablette, Desktop)",
+      "Micro-animations fluides et intégration sémantique HTML5/CSS3",
+      "Optimisation des temps de chargement & score Core Web Vitals",
+    ],
+    technologies: ["React.js", "Next.js", "JavaScript", "HTML5", "CSS3"],
+    highlightColor: "#2563EB",
+  },
+  {
+    id: "backend-api",
+    title: "Back-End & Base de Données",
+    badge: "Architecture & Sécurité",
+    shortDescription: "Développement d'APIs RESTful, authentification et gestion de données relationnelles.",
+    fullDescription: "Mise en place de structures serveur robustes et sécurisées pour gérer le flux de vos données, l'authentification des utilisateurs et la communication fiable avec vos clients front-end.",
+    iconName: "Server",
+    deliverables: [
+      "Conception d'APIs RESTful structurées et performantes",
+      "Gestion de l'authentification (JWT, Supabase Auth, Sécurité)",
+      "Modélisation et requêtage de bases PostgreSQL & Supabase",
+      "Intégration d'ORM Prisma avec typage strict et migrations",
+    ],
+    technologies: ["Node.js", "PostgreSQL", "Supabase", "Prisma", "API REST"],
+    highlightColor: "#059669",
+  },
+  {
+    id: "uiux-design",
+    title: "UI/UX Design & Prototypage",
+    badge: "Ergonomie & Esthétique",
+    shortDescription: "Conception d'interfaces intuitives et attrayantes adaptées à vos utilisateurs.",
+    fullDescription: "Alliant sensibilité graphique et vision produit, je traduis vos objectifs business en maquettes fonctionnelles et designs épurés créés sur Figma pour ravir vos utilisateurs.",
+    iconName: "Palette",
+    deliverables: [
+      "Maquettes Figma haute fidélité & prototypes interactifs",
+      "Design systems réutilisables et guides de styles graphiques",
+      "Parcours utilisateur (UX) fluides et sans friction",
+      "Audits d'ergonomie et optimisation de l'accessibilité web",
+    ],
+    technologies: ["Figma", "UI/UX", "Responsive Design", "Prototypage"],
+    highlightColor: "#EC4899",
+  },
+  {
+    id: "conception-projet",
+    title: "Conception & Gestion de Projet",
+    badge: "Accompagnement Global",
+    shortDescription: "Analyse des besoins, architecture logicielle et méthode de résolution de problèmes.",
+    fullDescription: "Accompagnement stratégique et technique tout au long du cycle de vie de votre projet numérique, de la phase de cadrage et modélisation jusqu'à la livraison finale.",
+    iconName: "Compass",
+    deliverables: [
+      "Analyse des besoins techniques et spécifications fonctionnelles",
+      "Conception d'architecture logicielle globale (Front + Back + BDD)",
+      "Planification, gestion de projet méthodique et suivi agile",
+      "Résolution de problèmes complexes, débogage et refactoring",
+    ],
+    technologies: ["Analyse", "Conception", "Git / GitHub", "Gestion de Projet"],
+    highlightColor: "#D97706",
+  },
+];
