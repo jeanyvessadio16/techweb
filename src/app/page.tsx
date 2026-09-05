@@ -1,69 +1,110 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, FolderGit2, Code } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SkillsSection from "@/components/sections/SkillsSection";
+import AboutSection from "@/components/sections/AboutSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="flex-1">
+      {/* Hero section */}
+      <section className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+            {/* Colonne gauche : Présentation & IHM */}
+            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+              {/* Titre & Hiérarchie */}
+              <div className="space-y-2.5">
+                <p className="text-base sm:text-lg font-medium text-slate-600">
+                  Bonjour, je suis
+                </p>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+                  Jean-Yves <span className="text-blue-600">SADIO</span>
+                </h1>
+                <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-800 tracking-tight">
+                  Développeur Web Front-End
+                </p>
+              </div>
+
+              {/* Description */}
+              <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+                Je conçois et développe des interfaces web modernes, rapides, fiables et centrées sur l’expérience utilisateur. Passionné par l’ergonomie et le code propre.
+              </p>
+
+              {/* Boutons d'action (CTAs) avec Shadcn UI Button */}
+              <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-1">
+                <Button
+                  variant="default"
+                  size="lg"
+                  className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
+                >
+                  <Link href="/contact" className="inline-flex items-center gap-2">
+                    <span>Discuter d'un projet</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="w-full sm:w-auto border-slate-300 text-slate-800 hover:bg-slate-100 hover:text-slate-900 rounded-xl px-7 py-3.5 font-semibold transition-all cursor-pointer"
+                >
+                  <Link href="/projets" className="inline-flex items-center gap-2">
+                    <FolderGit2 className="w-4 h-4 text-slate-600" />
+                    <span>Voir mes projets</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Colonne droite : Photo de profil & Carte IHM */}
+            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
+
+                {/* Cadre de la photo */}
+                <div className="relative rounded-3xl overflow-hidden bg-white p-2.5 sm:p-3 border border-slate-200/90 shadow-xl">
+                  <Image
+                    src="/images/jean-yves.png"
+                    alt="Photo de profil de Jean-Yves SADIO"
+                    width={500}
+                    height={500}
+                    priority
+                    className="w-full aspect-square object-cover rounded-2xl transition-transform hover:scale-[1.01] duration-300"
+                  />
+                </div>
+
+                {/* Badge flottant inférieur : Spécialité */}
+                <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 shrink-0">
+                    <Code className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-[11px] text-slate-500 font-medium leading-none">Spécialité</p>
+                    <p className="text-sm font-bold text-slate-900 mt-0.5">UI/UX & Front-End</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Skills section */}
+      <SkillsSection />
+
+      {/* About me section */}
+      <AboutSection />
+
+      {/* Projects section */}
+      <ProjectsSection />
+
+      {/* Contact section */}
+      <section></section>
+    </main>
   );
 }
