@@ -20,9 +20,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="fr"
-      className={`${poppins.variable} min-h-screen antialiased`}
+      className={`${poppins.variable} min-h-screen antialiased overflow-x-hidden w-full max-w-full`}
     >
-      <body className={`${poppins.className} min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-900`}>
+      <body className={`${poppins.className} min-h-full flex flex-col font-sans bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden w-full max-w-full box-border`}>
         <HeaderNavbar />
         {children}
         <Footer />

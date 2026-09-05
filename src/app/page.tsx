@@ -10,7 +10,7 @@ import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
   return (
-    <main className="flex-1">
+    <main className="flex-1 w-full max-w-full overflow-x-hidden">
       {/* Hero section */}
       <section id="hero" className="relative overflow-hidden pt-24 sm:pt-32 pb-16 sm:pb-24 lg:pb-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,7 +79,7 @@ export default function Home() {
                 </div>
 
                 {/* Badge flottant inférieur : Spécialité */}
-                <div className="absolute -bottom-4 left-4 sm:-bottom-5 sm:left-6 bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
+                <div className="absolute -bottom-4 left-2 right-2 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0">
                     <Code className="w-5 h-5" />
                   </div>
