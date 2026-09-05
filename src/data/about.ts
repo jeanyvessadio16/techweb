@@ -2,10 +2,10 @@ import { AboutData } from "@/types/about";
 
 export const ABOUT_DATA: AboutData = {
   title: "À propos de moi",
-  subtitle: "Développeur Web · Spécialiste Interfaces Modernes & UI/UX",
+  subtitle: "Développeur Web & Spécialiste Informatique · Niafrang (TECHWEB-JY)",
   paragraphs: [
-    "Je suis Jean Yves, développeur web spécialisé dans la conception d’interfaces modernes, intuitives et responsives. Mon objectif est de transformer vos idées en solutions numériques concrètes, performantes et axées sur l'expérience utilisateur.",
-    "Grâce à une double compétence en développement (React, Next.js, Node.js, PostgreSQL) et en design UI/UX, j'interviens sur l'ensemble de votre projet, de la conception graphique jusqu'à l'implémentation technique.",
+    "Je suis Jean-Yves SADIO, passionné d'informatique et développeur web originaire de Niafrang. Spécialisé dans la conception d’interfaces modernes, intuitives et responsives, je transforme vos idées en solutions numériques informatiques concrètes, performantes et axées sur l'expérience utilisateur.",
+    "Grâce à de solides compétences informatiques et en développement web (React, Next.js, Node.js, PostgreSQL) associées à une sensibilité UI/UX, j'interviens de Niafrang sur l'ensemble de vos projets digitaux, de la conception graphique à l'ingénierie logicielle.",
   ],
   stats: [
     {

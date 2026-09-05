@@ -21,19 +21,19 @@ export default function Home() {
               {/* Titre & Hiérarchie */}
               <div className="space-y-3">
                 <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-semibold tracking-wide">
-                  Développeur Web & Interfaces Numériques
+                  Expert Informatique & Développeur Web · Niafrang
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                   Jean-Yves <span className="text-blue-900">SADIO</span>
                 </h1>
                 <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-700 tracking-tight">
-                  Conception & Développement Web
+                  Informatique & Développement Web sur-mesure
                 </p>
               </div>
 
               {/* Description */}
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                Développeur Web passionné par la création d'interfaces modernes, rapides et intuitives. J'allie sensibilité UI/UX et rigueur technique pour concevoir des applications web sur-mesure.
+                Spécialiste en informatique et développement web à Niafrang. Passionné par la création d'interfaces modernes, rapides et intuitives avec React, Next.js et Node.js.
               </p>
 
               {/* Boutons d'action (CTAs) */}
