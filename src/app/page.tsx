@@ -33,7 +33,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                Je conçois et développe des interfaces web modernes, rapides, fiables et centrées sur l’expérience utilisateur. Une approche combinant sensibilité graphique et rigueur technique.
+                Développeur Web passionné par la création d'interfaces modernes, rapides et intuitives. J'allie sensibilité UI/UX et rigueur technique pour concevoir des applications web sur-mesure.
               </p>
 
               {/* Boutons d'action (CTAs) */}

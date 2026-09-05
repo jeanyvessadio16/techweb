@@ -1,22 +1,75 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema, type ContactFormData } from "@/validations/contact";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      message: "",
+    },
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const formData = new FormData();
+      formData.append(
+        "access_key",
+        process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "ba7b0d72-ca63-4f56-ba4b-f643c497c387"
+      );
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      if (data.phone) formData.append("phone", data.phone);
+      if (data.subject) formData.append("subject", data.subject);
+      formData.append("message", data.message);
+      formData.append("from_name", "Portfolio TECHWEB-JY - Contact");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const resultData = await response.json();
+
+      if (resultData.success) {
+        setSubmitted(true);
+        reset();
+      } else {
+        setSubmitError(
+          resultData.message || "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer."
+        );
+      }
+    } catch (_error) {
+      setSubmitError(
+        "Impossible d'envoyer le message. Veuillez vérifier votre connexion internet."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -84,7 +137,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          {/* Colonne droite : Formulaire de contact */}
+          {/* Colonne droite : Formulaire de contact sécurisé (Shadcn UI + Web3Forms + Zod) */}
           <div className="lg:col-span-7 bg-white border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-xs">
             {submitted ? (
               <div className="py-12 text-center space-y-4">
@@ -92,83 +145,146 @@ export default function ContactSection() {
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900">Message envoyé avec succès !</h3>
-                <p className="text-sm text-slate-600 max-w-md mx-auto">
-                  Merci pour votre message. Je reviendrai vers vous très rapidement.
+                <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+                  Merci pour votre message. Vos informations ont été transmises avec succès. Je vous répondrai dans les plus brefs délais.
                 </p>
                 <Button
                   variant="outline"
                   onClick={() => setSubmitted(false)}
-                  className="mt-4 rounded-xl cursor-pointer"
+                  className="mt-4 rounded-xl cursor-pointer border-slate-300"
                 >
                   Envoyer un autre message
                 </Button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+                {/* Honeypot Spam Protection (Web3Forms) */}
+                <input
+                  type="checkbox"
+                  name="botcheck"
+                  className="hidden"
+                  style={{ display: "none" }}
+                />
+
+                {/* Message d'erreur serveur si échec */}
+                {submitError && (
+                  <div className="p-4 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="name" className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                       Nom complet <span className="text-red-500">*</span>
-                    </label>
-                    <input
+                    </Label>
+                    <Input
+                      id="name"
                       type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      {...register("name")}
                       placeholder="Jean Dupont"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-900 focus:ring-2 focus:ring-blue-900/20 text-sm text-slate-900 outline-none transition-all"
+                      className="h-11 px-4 rounded-xl border-slate-200 text-sm text-slate-900"
                     />
+                    {errors.name && (
+                      <p className="text-xs font-medium text-red-600 mt-1">
+                        {errors.name.message}
+                      </p>
+                    )}
                   </div>
 
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <div className="space-y-2">
+                    <Label htmlFor="email" className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                       Adresse email <span className="text-red-500">*</span>
-                    </label>
-                    <input
+                    </Label>
+                    <Input
+                      id="email"
                       type="email"
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      {...register("email")}
                       placeholder="jean.dupont@exemple.com"
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-900 focus:ring-2 focus:ring-blue-900/20 text-sm text-slate-900 outline-none transition-all"
+                      className="h-11 px-4 rounded-xl border-slate-200 text-sm text-slate-900"
                     />
+                    {errors.email && (
+                      <p className="text-xs font-medium text-red-600 mt-1">
+                        {errors.email.message}
+                      </p>
+                    )}
                   </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
-                    Sujet du projet
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.subject}
-                    onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    placeholder="Création d'une application Next.js..."
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-900 focus:ring-2 focus:ring-blue-900/20 text-sm text-slate-900 outline-none transition-all"
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <Label htmlFor="phone" className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                      Téléphone <span className="text-slate-400 font-normal normal-case">(Optionnel)</span>
+                    </Label>
+                    <Input
+                      id="phone"
+                      type="tel"
+                      {...register("phone")}
+                      placeholder="+33 6 12 34 56 78"
+                      className="h-11 px-4 rounded-xl border-slate-200 text-sm text-slate-900"
+                    />
+                    {errors.phone && (
+                      <p className="text-xs font-medium text-red-600 mt-1">
+                        {errors.phone.message}
+                      </p>
+                    )}
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="subject" className="text-xs font-bold text-slate-700 uppercase tracking-wider">
+                      Sujet <span className="text-slate-400 font-normal normal-case">(Optionnel)</span>
+                    </Label>
+                    <Input
+                      id="subject"
+                      type="text"
+                      {...register("subject")}
+                      placeholder="Création d'une application..."
+                      className="h-11 px-4 rounded-xl border-slate-200 text-sm text-slate-900"
+                    />
+                    {errors.subject && (
+                      <p className="text-xs font-medium text-red-600 mt-1">
+                        {errors.subject.message}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <div className="space-y-2">
+                  <Label htmlFor="message" className="text-xs font-bold text-slate-700 uppercase tracking-wider">
                     Message <span className="text-red-500">*</span>
-                  </label>
-                  <textarea
-                    required
+                  </Label>
+                  <Textarea
+                    id="message"
                     rows={4}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    {...register("message")}
                     placeholder="Décrivez brièvement vos besoins, vos objectifs ou votre projet..."
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-blue-900 focus:ring-2 focus:ring-blue-900/20 text-sm text-slate-900 outline-none transition-all resize-none"
+                    className="px-4 py-3 rounded-xl border-slate-200 text-sm text-slate-900"
                   />
+                  {errors.message && (
+                    <p className="text-xs font-medium text-red-600 mt-1">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3.5 font-semibold shadow-xs transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                 >
-                  <span>Envoyer le message</span>
-                  <Send className="w-4 h-4" />
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      <span>Envoi du message en cours...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Envoyer le message</span>
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
                 </Button>
               </form>
             )}

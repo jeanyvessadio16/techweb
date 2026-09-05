@@ -5,14 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PROJECTS_DATA, UPCOMING_PROJECTS_DATA } from "@/data/projects";
 import { ProjectCategory } from "@/types/project";
-import {
-  FolderKanban,
-  CheckCircle2,
-  AlertCircle,
-  Sparkles,
-  Rocket,
-  ArrowRight,
-} from "lucide-react";
+import { Rocket, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "cn";
 
@@ -43,13 +36,13 @@ export default function ProjectsSection() {
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
-            Études de Cas & Réalisations
+            Réalisations & Projets
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             Projets réalisés
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Découvrez une sélection de projets web et numériques conçus et développés avec une attention particulière portée au <span className="font-semibold text-slate-800">design, à l’expérience utilisateur, à la performance et aux besoins du projet</span>.
+            Découvrez une sélection de projets web et numériques conçus et développés avec soin.
           </p>
 
           {/* Filtres de catégories */}
@@ -76,8 +69,8 @@ export default function ProjectsSection() {
           </div>
         </div>
 
-        {/* Grille des études de cas */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+        {/* Grille des cartes de projets épurées */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {filteredProjects.map((project) => (
             <article
               key={project.id}
@@ -105,8 +98,8 @@ export default function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Contenu de l'étude de cas */}
-                <div className="p-6 sm:p-8 space-y-6">
+                {/* Contenu du projet */}
+                <div className="p-6 sm:p-8 space-y-4">
                   {/* Titre & Sous-titre */}
                   <div>
                     <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
@@ -117,53 +110,10 @@ export default function ProjectsSection() {
                     </p>
                   </div>
 
-                  {/* Problème & Solution (Format Étude de Cas) */}
-                  <div className="space-y-3 pt-2">
-                    {project.problem && (
-                      <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-4 flex items-start gap-3">
-                        <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-bold text-slate-900 uppercase tracking-wider">
-                            Le Problème / Défi
-                          </p>
-                          <p className="text-xs sm:text-sm text-slate-600 mt-0.5 leading-relaxed">
-                            {project.problem}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-
-                    {project.solution && (
-                      <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-4 flex items-start gap-3">
-                        <Sparkles className="w-4 h-4 text-blue-900 shrink-0 mt-0.5" />
-                        <div>
-                          <p className="text-xs font-bold text-blue-950 uppercase tracking-wider">
-                            La Solution Apportée
-                          </p>
-                          <p className="text-xs sm:text-sm text-slate-700 mt-0.5 leading-relaxed">
-                            {project.solution}
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-
-                  {/* Liste des Fonctionnalités ou Livrables */}
-                  {(project.features || project.deliverables) && (
-                    <div className="space-y-2 pt-2">
-                      <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-                        {project.features ? "Fonctionnalités Clés" : "Livrables & Réalisations"}
-                      </p>
-                      <div className="space-y-2">
-                        {(project.features || project.deliverables)?.map((item, idx) => (
-                          <div key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-slate-700">
-                            <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  {/* Description simple */}
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {project.description}
+                  </p>
                 </div>
               </div>
 
@@ -183,10 +133,10 @@ export default function ProjectsSection() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-blue-900 hover:text-blue-950 transition-colors cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-blue-900 hover:text-blue-950 transition-colors cursor-pointer group/link"
                   >
-                    <span>Discuter de ce cas</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <span>Discuter du projet</span>
+                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -225,7 +175,7 @@ export default function ProjectsSection() {
             className="bg-blue-900 hover:bg-blue-950 text-white rounded-xl px-8 py-3.5 font-semibold shadow-xs cursor-pointer"
           >
             <Link href="/contact" className="inline-flex items-center gap-2">
-              <span>Vous avez un projet similaire ? Parlons-en !</span>
+              <span>Vous avez un projet en tête ? Parlons-en !</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>

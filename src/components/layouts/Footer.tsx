@@ -11,11 +11,12 @@ export default function Footer() {
   };
 
   const footerLinks = [
-    { label: "Accueil", href: "/" },
-    { label: "À propos", href: "#a-propos" },
-    { label: "Services", href: "#services" },
-    { label: "Projets", href: "#projets" },
-    { label: "Contact", href: "/contact" },
+    { label: "Accueil", href: "/#hero" },
+    { label: "Services", href: "/#services" },
+    { label: "Compétences", href: "/#competences" },
+    { label: "À propos", href: "/#a-propos" },
+    { label: "Projets", href: "/#projets" },
+    { label: "Contact", href: "/#contact" },
   ];
 
   const socialLinks = [
@@ -37,25 +38,25 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t border-slate-200/80 pt-12 pb-8 text-slate-600">
+    <footer className="bg-slate-950 text-slate-300 border-t border-slate-800/80 pt-14 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Ligne principale du Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-8 border-b border-slate-100">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
           
           {/* Marque & Identification */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
-            <Link href="/" className="inline-block">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+            <Link href="/#hero" className="inline-block bg-white/95 backdrop-blur-md rounded-xl p-2 shadow-sm">
               <Image
                 src="/logo/techwebjy-logo.png"
                 alt="Logo TECHWEB-JY"
                 width={140}
                 height={38}
-                className="h-9 w-auto object-contain"
+                className="h-8 sm:h-9 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs text-slate-500 max-w-sm">
-              Jean-Yves SADIO — Développeur Web Front-End. Création d'interfaces modernes, réactives et performantes.
+            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+              Jean-Yves SADIO — Développeur Web. Création d'interfaces modernes, rapides et performantes.
             </p>
           </div>
 
@@ -66,7 +67,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-slate-600 hover:text-blue-900 transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -86,7 +87,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.name}
-                  className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200/80 text-slate-600 hover:text-blue-900 hover:bg-blue-50 hover:border-blue-200 transition-all flex items-center justify-center cursor-pointer"
+                  className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -97,12 +98,12 @@ export default function Footer() {
         </div>
 
         {/* Bas de page : Copyright & Bouton de retour en haut */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} TECHWEB-JY (Jean-Yves SADIO). Tous droits réservés.</p>
 
           <button
             onClick={scrollToTop}
-            className="inline-flex items-center gap-1.5 text-slate-500 hover:text-blue-900 font-medium transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-slate-400 hover:text-white font-medium transition-colors cursor-pointer"
             aria-label="Retourner en haut de la page"
           >
             <span>Retour en haut</span>

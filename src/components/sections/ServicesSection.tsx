@@ -32,7 +32,7 @@ export default function ServicesSection() {
             Des solutions numériques sur-mesure pour vos projets
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            De la conception de l&apos;interface jusqu&apos;à l&apos;implémentation technique backend et base de données, je vous accompagne dans la réalisation d&apos;applications web performantes.
+            De la création d&apos;interfaces web jusqu&apos;à la gestion des données backend, je vous accompagne dans la réalisation d&apos;applications performantes et adaptées à vos besoins.
           </p>
         </div>
 

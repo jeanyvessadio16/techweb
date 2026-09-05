@@ -4,11 +4,8 @@ export const ABOUT_DATA: AboutData = {
   title: "À propos de moi",
   subtitle: "Développeur Web · Spécialiste Interfaces Modernes & UI/UX",
   paragraphs: [
-    "Je suis Jean Yves, développeur web spécialisé dans la conception et le développement d’interfaces web modernes, intuitives et responsives.",
-    "J’aime transformer des idées et des besoins en solutions numériques concrètes, en accordant une attention particulière à l’expérience utilisateur, à la qualité du code et au design des interfaces. Mon approche combine développement web, analyse et sensibilité graphique afin de créer des produits à la fois fonctionnels, performants et visuellement cohérents.",
-    "Je travaille notamment avec des technologies modernes du développement web telles que HTML, CSS, JavaScript, React, Next.js, Prisma, PostgreSQL et Supabase.",
-    "Au-delà du développement, je m’intéresse également au UI/UX Design, au graphisme et à la conception de projets numériques. Cette polyvalence me permet de comprendre un projet dans son ensemble, de la conception de l’interface jusqu’à son implémentation technique.",
-    "Mon objectif est de continuer à progresser, d'explorer de nouvelles technologies et de participer à la création de solutions web utiles, accessibles et adaptées aux besoins réels des utilisateurs.",
+    "Je suis Jean Yves, développeur web spécialisé dans la conception d’interfaces modernes, intuitives et responsives. Mon objectif est de transformer vos idées en solutions numériques concrètes, performantes et axées sur l'expérience utilisateur.",
+    "Grâce à une double compétence en développement (React, Next.js, Node.js, PostgreSQL) et en design UI/UX, j'interviens sur l'ensemble de votre projet, de la conception graphique jusqu'à l'implémentation technique.",
   ],
   stats: [
     {
