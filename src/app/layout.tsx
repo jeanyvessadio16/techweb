@@ -94,7 +94,8 @@ const jsonLd = [
     description: "Spécialiste en Informatique et Développeur Web originaire de Niafrang.",
     url: siteUrl,
     image: `${siteUrl}/images/jean-yves.png`,
-    email: "contact@techwebjy.com",
+    email: "techwebjeanyves@gmail.com",
+    telephone: "+221767600219",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Niafrang",

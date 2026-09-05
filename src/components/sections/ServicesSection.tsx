@@ -49,16 +49,16 @@ export default function ServicesSection() {
                 <div>
                   {/* En-tête de carte avec icône et badge */}
                   <div className="flex items-center justify-between gap-4 mb-6">
-                    <div className="w-13 h-13 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+                    <div className="w-13 h-13 rounded-2xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 group-hover:bg-slate-950 group-hover:text-white transition-all duration-300">
                       <IconComponent className="w-6 h-6" />
                     </div>
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-200/60 text-slate-700 group-hover:bg-blue-50 group-hover:text-blue-900 transition-colors">
+                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-slate-200/60 text-slate-700 group-hover:bg-slate-100 group-hover:text-slate-950 transition-colors">
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Titre et description */}
-                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-900 transition-colors mb-3">
+                  <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-950 transition-colors mb-3">
                     {service.title}
                   </h3>
                   <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6">
@@ -93,8 +93,8 @@ export default function ServicesSection() {
                   </div>
 
                   <Link
-                    href="/contact"
-                    className="inline-flex items-center gap-1 text-xs font-bold text-blue-900 hover:text-blue-950 transition-colors cursor-pointer group/link"
+                    href="/#contact"
+                    className="inline-flex items-center gap-1 text-xs font-bold text-slate-950 hover:text-slate-900 transition-colors cursor-pointer group/link"
                   >
                     <span>Discuter de votre projet</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />

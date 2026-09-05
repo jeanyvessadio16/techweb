@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema, type ContactFormData } from "@/validations/contact";
-import { Mail, MapPin, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
+import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -100,28 +100,43 @@ export default function ContactSection() {
 
               <div className="space-y-5">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 shrink-0 mt-0.5">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Email</p>
                     <a
-                      href="mailto:contact@techwebjy.com"
-                      className="text-sm font-semibold text-slate-900 hover:text-blue-900 transition-colors"
+                      href="mailto:techwebjeanyves@gmail.com"
+                      className="text-sm font-semibold text-slate-900 hover:text-slate-950 transition-colors"
                     >
-                      contact@techwebjy.com
+                      techwebjeanyves@gmail.com
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0 mt-0.5">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 shrink-0 mt-0.5">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Téléphone / WhatsApp</p>
+                    <a
+                      href="tel:+221767600219"
+                      className="text-sm font-semibold text-slate-900 hover:text-slate-950 transition-colors"
+                    >
+                      +221 76 760 02 19
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 shrink-0 mt-0.5">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">Localisation</p>
                     <p className="text-sm font-semibold text-slate-900">
-                      Disponible à distance (Remote) & Hybride
+                      Niafrang, Sénégal (Remote & Hybride)
                     </p>
                   </div>
                 </div>
@@ -272,7 +287,7 @@ export default function ContactSection() {
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3.5 font-semibold shadow-xs transition-all cursor-pointer inline-flex items-center justify-center gap-2"
+                  className="w-full bg-slate-950 hover:bg-slate-900 text-white rounded-xl py-3.5 font-semibold shadow-xs transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>

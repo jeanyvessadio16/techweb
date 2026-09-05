@@ -137,7 +137,7 @@ export default function HeaderNavbar() {
                   className={cn(
                     "px-3.5 py-2 rounded-full text-sm font-medium transition-all duration-200",
                     isActive
-                      ? "text-blue-900 bg-blue-50/90 font-bold shadow-2xs"
+                      ? "text-slate-950 bg-slate-100 font-bold shadow-2xs"
                       : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/80"
                   )}
                 >
@@ -152,7 +152,7 @@ export default function HeaderNavbar() {
             <Button
               variant="default"
               size="sm"
-              className="bg-blue-900 hover:bg-blue-950 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
+              className="bg-slate-950 hover:bg-slate-900 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
             >
               <Link
                 href="/#contact"
@@ -170,7 +170,7 @@ export default function HeaderNavbar() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label={isMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
             aria-expanded={isMenuOpen}
-            className="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-800 hover:text-slate-950 hover:bg-slate-100 active:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors cursor-pointer shrink-0"
+            className="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-800 hover:text-slate-950 hover:bg-slate-100 active:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-slate-950 transition-colors cursor-pointer shrink-0"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6 text-slate-900 shrink-0" />
@@ -212,12 +212,12 @@ export default function HeaderNavbar() {
                       className={cn(
                         "flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors",
                         isActive
-                          ? "bg-blue-50 text-blue-900 font-bold"
+                          ? "bg-slate-100 text-slate-950 font-bold"
                           : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                       )}
                     >
                       <span>{link.label}</span>
-                      {isActive && <span className="w-2 h-2 rounded-full bg-blue-900" />}
+                      {isActive && <span className="w-2 h-2 rounded-full bg-slate-950" />}
                     </Link>
                   </li>
                 );
@@ -229,7 +229,7 @@ export default function HeaderNavbar() {
               <Button
                 variant="default"
                 size="lg"
-                className="w-full bg-blue-900 hover:bg-blue-950 text-white rounded-xl py-3.5 font-medium shadow-xs cursor-pointer"
+                className="w-full bg-slate-950 hover:bg-slate-900 text-white rounded-xl py-3.5 font-medium shadow-xs cursor-pointer"
               >
                 <Link
                   href="/#contact"

@@ -105,7 +105,7 @@ export default function SkillsSection() {
                         />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
+                        <h4 className="text-sm font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
                           {skill.name}
                         </h4>
                         {skill.description && (

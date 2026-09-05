@@ -25,7 +25,7 @@ export default function AboutSection() {
         <div className="max-w-4xl mx-auto">
           <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-12 shadow-xs space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-900" />
+              <span className="w-2.5 h-2.5 rounded-full bg-slate-950" />
               Mon engagement pour vos projets
             </h3>
             
@@ -39,7 +39,7 @@ export default function AboutSection() {
               <Button
                 variant="default"
                 size="lg"
-                className="bg-blue-900 hover:bg-blue-950 text-white rounded-xl px-7 py-3.5 font-semibold shadow-xs cursor-pointer"
+                className="bg-slate-950 hover:bg-slate-900 text-white rounded-xl px-7 py-3.5 font-semibold shadow-xs cursor-pointer"
               >
                 <Link href="/#contact" className="inline-flex items-center gap-2">
                   <span>Me contacter</span>

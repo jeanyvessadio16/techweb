@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUp, Mail } from "lucide-react";
+import { ArrowUp, Mail, Phone, MapPin } from "lucide-react";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function Footer() {
@@ -19,85 +19,112 @@ export default function Footer() {
     { label: "Contact", href: "/#contact" },
   ];
 
-  const socialLinks = [
-    {
-      name: "GitHub",
-      href: "https://github.com/techwebjy",
-      icon: FaGithub,
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/techwebjy",
-      icon: FaLinkedin,
-    },
-    {
-      name: "Email",
-      href: "mailto:contact@techwebjy.com",
-      icon: Mail,
-    },
-  ];
-
   return (
     <footer className="bg-slate-950 text-slate-300 border-t border-slate-800/80 pt-14 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Ligne principale du Footer */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-10 border-b border-slate-800/80">
+        {/* Grille principale du Footer */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-10 border-b border-slate-800/80 items-start">
           
-          {/* Marque & Identification */}
-          <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-3">
-            <Link href="/#hero" className="inline-block bg-white/95 backdrop-blur-md rounded-xl p-2 shadow-sm">
+          {/* Colonne 1 : Marque & Identification */}
+          <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
+            <Link
+              href="/#hero"
+              className="inline-block bg-white/95 backdrop-blur-md rounded-xl p-2 shadow-xs transition-transform hover:scale-105"
+            >
               <Image
                 src="/logo/techwebjy-logo.png"
                 alt="Logo TECHWEB-JY"
-                width={140}
-                height={38}
+                width={150}
+                height={40}
                 className="h-8 sm:h-9 w-auto object-contain"
               />
             </Link>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Jean-Yves SADIO — Développeur Web. Création d'interfaces modernes, rapides et performantes.
+              Jean-Yves SADIO — Développeur Web & Expert Informatique (Niafrang, Sénégal). Conception d&apos;interfaces modernes, rapides et performantes.
             </p>
+
+            {/* Liens réseaux sociaux */}
+            <div className="flex items-center gap-3 pt-2">
+              <a
+                href="https://github.com/techwebjy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
+              >
+                <FaGithub className="w-4 h-4" />
+              </a>
+              <a
+                href="https://linkedin.com/in/techwebjy"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
+              >
+                <FaLinkedin className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
-          {/* Navigations essentielles */}
-          <nav aria-label="Navigation footer">
-            <ul className="flex flex-wrap items-center justify-center gap-6 text-sm font-medium">
-              {footerLinks.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-400 hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* Colonne 2 : Navigation rapide */}
+          <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
+            <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+              Navigation
+            </h3>
+            <nav aria-label="Navigation footer">
+              <ul className="flex flex-col space-y-2 text-sm font-medium">
+                {footerLinks.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-slate-400 hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
 
-          {/* Réseaux sociaux & Contact */}
-          <div className="flex items-center gap-3">
-            {socialLinks.map((social) => {
-              const Icon = social.icon;
-              return (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={social.name}
-                  className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
-              );
-            })}
+          {/* Colonne 3 : Coordonnées lisibles en texte */}
+          <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3.5">
+            <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
+              Coordonnées
+            </h3>
+            <div className="flex flex-col space-y-3 text-sm">
+              <a
+                href="mailto:techwebjeanyves@gmail.com"
+                className="inline-flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-slate-800 transition-all shrink-0">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <span className="font-semibold text-xs sm:text-sm">techwebjeanyves@gmail.com</span>
+              </a>
+
+              <a
+                href="tel:+221767600219"
+                className="inline-flex items-center gap-2.5 text-slate-300 hover:text-white transition-colors group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 group-hover:text-white group-hover:bg-slate-800 transition-all shrink-0">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <span className="font-semibold text-xs sm:text-sm">+221 76 760 02 19</span>
+              </a>
+
+              <div className="inline-flex items-center gap-2.5 text-slate-400 text-xs sm:text-sm">
+                <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 shrink-0">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <span>Niafrang, Sénégal</span>
+              </div>
+            </div>
           </div>
 
         </div>
 
-        {/* Bas de page : Copyright & Bouton de retour en haut */}
+        {/* Bas de page : Copyright & Retour en haut */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>© {new Date().getFullYear()} TECHWEB-JY (Jean-Yves SADIO). Tous droits réservés.</p>
 
@@ -110,7 +137,6 @@ export default function Footer() {
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
-
       </div>
     </footer>
   );

@@ -24,7 +24,7 @@ export default function Home() {
                   Expert Informatique & Développeur Web · Niafrang
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-                  Jean-Yves <span className="text-blue-900">SADIO</span>
+                  Jean-Yves <span className="text-slate-950">SADIO</span>
                 </h1>
                 <p className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-700 tracking-tight">
                   Informatique & Développement Web sur-mesure
@@ -41,9 +41,9 @@ export default function Home() {
                 <Button
                   variant="default"
                   size="lg"
-                  className="w-full sm:w-auto bg-blue-900 hover:bg-blue-950 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
+                  className="w-full sm:w-auto bg-slate-950 hover:bg-slate-900 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
                 >
-                  <Link href="/contact" className="inline-flex items-center gap-2">
+                  <Link href="/#contact" className="inline-flex items-center gap-2">
                     <span>Discuter d'un projet</span>
                     <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -54,7 +54,7 @@ export default function Home() {
                   size="lg"
                   className="w-full sm:w-auto border-slate-300 text-slate-800 hover:bg-slate-100 hover:text-slate-900 rounded-xl px-7 py-3.5 font-semibold transition-all cursor-pointer"
                 >
-                  <Link href="/projets" className="inline-flex items-center gap-2">
+                  <Link href="/#projets" className="inline-flex items-center gap-2">
                     <FolderGit2 className="w-4 h-4 text-slate-600" />
                     <span>Voir mes projets</span>
                   </Link>
@@ -80,7 +80,7 @@ export default function Home() {
 
                 {/* Badge flottant inférieur : Spécialité */}
                 <div className="absolute -bottom-4 left-2 right-2 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-900 shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 shrink-0">
                     <Code className="w-5 h-5" />
                   </div>
                   <div>

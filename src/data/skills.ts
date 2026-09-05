@@ -189,43 +189,4 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       },
     ],
   },
-  {
-    id: "methodology",
-    title: "Méthodologie",
-    description: "Processus d'analyse, d'organisation et de résolution.",
-    skills: [
-      {
-        id: "analyse",
-        name: "Analyse",
-        category: "methodology",
-        iconName: "Search",
-        color: "#0EA5E9",
-        description: "Expression des besoins et faisabilité technique.",
-      },
-      {
-        id: "conception",
-        name: "Conception",
-        category: "methodology",
-        iconName: "Compass",
-        color: "#F59E0B",
-        description: "Architecture applicative et modélisation.",
-      },
-      {
-        id: "gestionprojet",
-        name: "Gestion de projet",
-        category: "methodology",
-        iconName: "Kanban",
-        color: "#10B981",
-        description: "Planification, suivi agile et livrables.",
-      },
-      {
-        id: "resolutionproblemes",
-        name: "Résolution de problèmes",
-        category: "methodology",
-        iconName: "Puzzle",
-        color: "#D97706",
-        description: "Débogage méthodique et optimisation.",
-      },
-    ],
-  },
 ];
