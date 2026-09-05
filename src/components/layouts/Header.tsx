@@ -165,16 +165,19 @@ export default function HeaderNavbar() {
           </div>
 
           {/* Bouton Menu Mobile */}
-          <Button
-            variant="ghost"
-            size="icon"
+          <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-label={isMenuOpen ? "Fermer le menu de navigation" : "Ouvrir le menu de navigation"}
             aria-expanded={isMenuOpen}
-            className="md:hidden cursor-pointer rounded-xl text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+            className="md:hidden inline-flex items-center justify-center p-2.5 rounded-xl text-slate-800 hover:text-slate-950 hover:bg-slate-100 active:bg-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900 transition-colors cursor-pointer"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-slate-900" /> : <Menu className="w-6 h-6 text-slate-900" />}
-          </Button>
+            {isMenuOpen ? (
+              <X className="w-6 h-6 text-slate-900 shrink-0" />
+            ) : (
+              <Menu className="w-6 h-6 text-slate-900 shrink-0" />
+            )}
+          </button>
         </div>
       </header>
 
