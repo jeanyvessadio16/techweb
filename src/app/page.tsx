@@ -21,7 +21,7 @@ export default function Home() {
               {/* Titre & Hiérarchie */}
               <div className="space-y-3">
                 <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-semibold tracking-wide">
-                  Expert Informatique & Développeur Web · Niafrang
+                  Informatique & Développeur Web · Niafrang
                 </div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                   Jean-Yves <span className="text-slate-950">SADIO</span>
