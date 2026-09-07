@@ -1,15 +1,24 @@
+"use client";
+
 import Link from "next/link";
 import { ABOUT_DATA } from "@/data/about";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 
 export default function AboutSection() {
   return (
     <section id="a-propos" className="py-20 sm:py-28 bg-slate-50/60 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête de section */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* En-tête de section avec fade-in */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+        >
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
             Présentation
           </div>
@@ -19,10 +28,16 @@ export default function AboutSection() {
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             {ABOUT_DATA.subtitle}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Carte de présentation simple & centrée */}
-        <div className="max-w-4xl mx-auto">
+        {/* Carte de présentation animée */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="max-w-4xl mx-auto"
+        >
           <div className="bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-12 shadow-xs space-y-6">
             <h3 className="text-2xl font-bold text-slate-900 flex items-center gap-2.5">
               <span className="w-2.5 h-2.5 rounded-full bg-slate-950" />
@@ -58,7 +73,7 @@ export default function AboutSection() {
               </Button>
             </div>
           </div>
-        </div>
+        </motion.div>
 
       </div>
     </section>

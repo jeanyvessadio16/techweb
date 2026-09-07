@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FolderGit2, Code } from "lucide-react";
@@ -7,6 +9,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import AboutSection from "@/components/sections/AboutSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import { motion } from "motion/react";
 
 export default function Home() {
   return (
@@ -16,13 +19,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
-            {/* Colonne gauche : Présentation & IHM */}
-            <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+            {/* Colonne gauche : Présentation & IHM avec animations motion */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6"
+            >
               {/* Titre & Hiérarchie */}
               <div className="space-y-3">
-                <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-semibold tracking-wide">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4, delay: 0.1 }}
+                  className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200/90 text-slate-700 text-xs sm:text-sm font-semibold tracking-wide"
+                >
                   Informatique & Développeur Web · Niafrang
-                </div>
+                </motion.div>
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                   Jean-Yves <span className="text-slate-950">SADIO</span>
                 </h1>
@@ -33,7 +46,7 @@ export default function Home() {
 
               {/* Description */}
               <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                Spécialiste en informatique et développement web à Niafrang. Passionné par la création d'interfaces modernes, rapides et intuitives avec React, Next.js et Node.js.
+                Spécialiste en informatique et développement web à Niafrang. Passionné par la création d&apos;interfaces modernes, rapides et intuitives avec React, Next.js et Node.js.
               </p>
 
               {/* Boutons d'action (CTAs) */}
@@ -60,10 +73,15 @@ export default function Home() {
                   </Link>
                 </Button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Colonne droite : Photo de profil & Carte IHM */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+              className="lg:col-span-5 flex justify-center lg:justify-end"
+            >
               <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md">
 
                 {/* Cadre de la photo */}
@@ -79,7 +97,12 @@ export default function Home() {
                 </div>
 
                 {/* Badge flottant inférieur : Spécialité */}
-                <div className="absolute -bottom-4 left-2 right-2 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="absolute -bottom-4 left-2 right-2 sm:left-6 sm:right-auto bg-white/95 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3 sm:p-3.5 shadow-lg flex items-center gap-3"
+                >
                   <div className="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-slate-950 shrink-0">
                     <Code className="w-5 h-5" />
                   </div>
@@ -87,10 +110,10 @@ export default function Home() {
                     <p className="text-[11px] text-slate-500 font-medium leading-none">Spécialité</p>
                     <p className="text-sm font-bold text-slate-900 mt-0.5">UI/UX & Développement Web</p>
                   </div>
-                </div>
+                </motion.div>
 
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>

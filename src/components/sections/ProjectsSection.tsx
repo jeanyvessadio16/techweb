@@ -8,6 +8,7 @@ import { ProjectCategory } from "@/types/project";
 import { Rocket, ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "cn";
+import { motion, AnimatePresence } from "motion/react";
 
 interface CategoryFilter {
   id: ProjectCategory;
@@ -33,8 +34,14 @@ export default function ProjectsSection() {
     <section id="projets" className="py-20 sm:py-28 bg-slate-50/60 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête de section */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        {/* En-tête de section avec fade-in */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-12 sm:mb-16"
+        >
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
             Réalisations & Projets
           </div>
@@ -45,7 +52,7 @@ export default function ProjectsSection() {
             Découvrez une sélection de projets web et numériques conçus et développés avec soin.
           </p>
 
-          {/* Filtres de catégories */}
+          {/* Filtres de catégories animés */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {CATEGORY_FILTERS.map((cat) => {
               const isActive = selectedCategory === cat.id;
@@ -67,98 +74,112 @@ export default function ProjectsSection() {
               );
             })}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Grille des cartes de projets épurées */}
+        {/* Grille des cartes de projets avec AnimatePresence */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-          {filteredProjects.map((project) => (
-            <article
-              key={project.id}
-              className="group bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xs hover:border-slate-300 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                {/* Image & Badges */}
-                <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100 border-b border-slate-200/80">
-                  <Image
-                    src={project.imageUrl}
-                    alt={`Aperçu du projet ${project.title}`}
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.article
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
+                whileHover={{ y: -6 }}
+                className="group bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xs hover:border-slate-300 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  {/* Image & Badges */}
+                  <div className="relative aspect-[16/9] w-full overflow-hidden bg-slate-100 border-b border-slate-200/80">
+                    <Image
+                      src={project.imageUrl}
+                      alt={`Aperçu du projet ${project.title}`}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
 
-                  {/* Badge Catégorie & Année */}
-                  <div className="absolute top-4 left-4 flex items-center gap-2">
-                    <span className="bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-950 shadow-2xs">
-                      {project.categoryLabel}
-                    </span>
+                    {/* Badge Catégorie & Année */}
+                    <div className="absolute top-4 left-4 flex items-center gap-2">
+                      <span className="bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-slate-950 shadow-2xs">
+                        {project.categoryLabel}
+                      </span>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-slate-900/80 text-white backdrop-blur-md px-2.5 py-0.5 rounded-full text-[11px] font-semibold">
+                      {project.year}
+                    </div>
                   </div>
-                  <div className="absolute top-4 right-4 bg-slate-900/80 text-white backdrop-blur-md px-2.5 py-0.5 rounded-full text-[11px] font-semibold">
-                    {project.year}
-                  </div>
-                </div>
 
-                {/* Contenu du projet */}
-                <div className="p-6 sm:p-8 space-y-4">
-                  {/* Titre & Sous-titre */}
-                  <div>
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm font-semibold text-slate-950 mt-1">
-                      {project.subtitle}
+                  {/* Contenu du projet */}
+                  <div className="p-6 sm:p-8 space-y-4">
+                    {/* Titre & Sous-titre */}
+                    <div>
+                      <h3 className="text-2xl font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
+                        {project.title}
+                      </h3>
+                      <p className="text-xs sm:text-sm font-semibold text-slate-950 mt-1">
+                        {project.subtitle}
+                      </p>
+                    </div>
+
+                    {/* Description simple */}
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {project.description}
                     </p>
                   </div>
-
-                  {/* Description simple */}
-                  <p className="text-sm text-slate-600 leading-relaxed">
-                    {project.description}
-                  </p>
                 </div>
-              </div>
 
-              {/* Technologies & Badges Footer */}
-              <div className="p-6 sm:p-8 pt-0">
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200/80 text-slate-700 text-[11px] font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                {/* Technologies & Badges Footer */}
+                <div className="p-6 sm:p-8 pt-0">
+                  <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap gap-1.5">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-md bg-slate-100 border border-slate-200/80 text-slate-700 text-[11px] font-medium"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
 
-                  <div className="flex items-center gap-3">
-                    {project.demoUrl && (
-                      <a
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-950 hover:bg-slate-900 text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                    <div className="flex items-center gap-3">
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-950 hover:bg-slate-900 text-white text-xs font-semibold shadow-2xs transition-all cursor-pointer"
+                        >
+                          <span>Visiter le site</span>
+                          <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
+                      )}
+                      <Link
+                        href="/#contact"
+                        className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-slate-950 transition-colors cursor-pointer group/link"
                       >
-                        <span>Visiter le site</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                    <Link
-                      href="/#contact"
-                      className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-slate-950 transition-colors cursor-pointer group/link"
-                    >
-                      <span>Discuter</span>
-                      <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
-                    </Link>
+                        <span>Discuter</span>
+                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
+                      </Link>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              </motion.article>
+            ))}
+          </AnimatePresence>
         </div>
 
-        {/* Section Projets en développement */}
-        <div className="mt-16 bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Section Projets en développement avec animation */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 bg-white border border-slate-200/90 rounded-3xl p-8 sm:p-10 shadow-xs flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div className="space-y-3 text-center md:text-left max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs font-bold">
               <Rocket className="w-3.5 h-3.5 text-slate-950" />
@@ -179,7 +200,7 @@ export default function ProjectsSection() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Bannière CTA globale */}
         <div className="mt-12 text-center">
@@ -187,7 +208,7 @@ export default function ProjectsSection() {
             size="lg"
             className="bg-slate-950 hover:bg-slate-900 text-white rounded-xl px-8 py-3.5 font-semibold shadow-xs cursor-pointer"
           >
-            <Link href="/contact" className="inline-flex items-center gap-2">
+            <Link href="/#contact" className="inline-flex items-center gap-2">
               <span>Vous avez un projet en tête ? Parlons-en !</span>
               <ArrowRight className="w-4 h-4" />
             </Link>

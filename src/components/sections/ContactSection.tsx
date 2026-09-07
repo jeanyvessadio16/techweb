@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { motion } from "motion/react";
 
 export default function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -76,8 +77,14 @@ export default function ContactSection() {
     <section id="contact" className="py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* En-tête de section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        {/* En-tête de section avec animation fade-in */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
             Contact & Collaboration
           </div>
@@ -87,12 +94,18 @@ export default function ContactSection() {
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             Vous avez une idée de projet web, une question technique ou une opportunité de collaboration ? Envoyez-moi un message et je vous répondrai dans les plus brefs délais.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start max-w-6xl mx-auto">
 
           {/* Colonne gauche : Coordonnées et Disponibilité */}
-          <div className="lg:col-span-5 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: -24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-5 space-y-6"
+          >
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-7 sm:p-8 space-y-6">
               <h3 className="text-xl font-bold text-slate-900">
                 Coordonnées & Informations
@@ -150,10 +163,16 @@ export default function ContactSection() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Colonne droite : Formulaire de contact sécurisé (Shadcn UI + Web3Forms + Zod) */}
-          <div className="lg:col-span-7 bg-white border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-xs">
+          <motion.div
+            initial={{ opacity: 0, x: 24 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-7 bg-white border border-slate-200/90 rounded-3xl p-7 sm:p-9 shadow-xs"
+          >
             {submitted ? (
               <div className="py-12 text-center space-y-4">
                 <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
@@ -302,7 +321,7 @@ export default function ContactSection() {
                 </Button>
               </form>
             )}
-          </div>
+          </motion.div>
 
         </div>
 

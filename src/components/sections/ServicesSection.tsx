@@ -1,7 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { SERVICES_DATA } from "@/data/services";
 import {
-  Wrench,
   Code2,
   Server,
   Palette,
@@ -10,6 +11,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "motion/react";
 
 const SERVICE_ICONS: Record<string, React.ElementType> = {
   Code2,
@@ -23,8 +25,14 @@ export default function ServicesSection() {
     <section id="services" className="py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête de section */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        {/* En-tête de section avec animation fade-in */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-center max-w-3xl mx-auto mb-16 sm:mb-20"
+        >
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
             Services & Prestations
           </div>
@@ -34,16 +42,21 @@ export default function ServicesSection() {
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
             De la création d&apos;interfaces web jusqu&apos;à la gestion des données backend, je vous accompagne dans la réalisation d&apos;applications performantes et adaptées à vos besoins.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Grille des services */}
+        {/* Grille des services avec animations stagger & hover */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {SERVICES_DATA.map((service) => {
+          {SERVICES_DATA.map((service, index) => {
             const IconComponent = SERVICE_ICONS[service.iconName] || Code2;
 
             return (
-              <div
+              <motion.div
                 key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                whileHover={{ y: -6 }}
                 className="group relative bg-slate-50/70 hover:bg-white border border-slate-200/90 hover:border-slate-300 rounded-3xl p-7 sm:p-9 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
@@ -100,13 +113,19 @@ export default function ServicesSection() {
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
-        {/* Bannière Call To Action (CTA) */}
-        <div className="mt-16 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+        {/* Bannière Call To Action (CTA) animée */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="mt-16 bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 rounded-3xl p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8"
+        >
           <div className="space-y-2 text-center md:text-left max-w-xl">
             <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
               Un projet en tête ou un besoin spécifique ?
@@ -119,12 +138,12 @@ export default function ServicesSection() {
             size="lg"
             className="bg-white text-blue-950 hover:bg-slate-100 font-bold rounded-2xl px-8 py-4 shadow-lg hover:shadow-xl transition-all shrink-0 cursor-pointer"
           >
-            <Link href="/contact" className="inline-flex items-center gap-2">
+            <Link href="/#contact" className="inline-flex items-center gap-2">
               <span>Demander un devis gratuit</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
       </div>
     </section>
