@@ -75,7 +75,7 @@ export default function ContactSection() {
   return (
     <section id="contact" className="py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* En-tête de section */}
         <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
@@ -90,7 +90,7 @@ export default function ContactSection() {
         </div>
 
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start max-w-6xl mx-auto">
-          
+
           {/* Colonne gauche : Coordonnées et Disponibilité */}
           <div className="lg:col-span-5 space-y-6">
             <div className="bg-slate-50 border border-slate-200/90 rounded-3xl p-7 sm:p-8 space-y-6">
@@ -285,9 +285,9 @@ export default function ContactSection() {
 
                 <Button
                   type="submit"
-                  size="lg"
+                  size="xl"
                   disabled={isSubmitting}
-                  className="w-full bg-slate-950 hover:bg-slate-900 text-white rounded-xl py-3.5 font-semibold shadow-xs transition-all cursor-pointer inline-flex items-center justify-center gap-2"
+                  className="w-full bg-blue-900 hover:bg-slate-900 text-white rounded-xl py-3.5 font-semibold shadow-xs transition-all cursor-pointer inline-flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -297,7 +297,6 @@ export default function ContactSection() {
                   ) : (
                     <>
                       <span>Envoyer le message</span>
-                      <Send className="w-4 h-4" />
                     </>
                   )}
                 </Button>

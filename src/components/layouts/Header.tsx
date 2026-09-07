@@ -151,8 +151,8 @@ export default function HeaderNavbar() {
           <div className="hidden md:flex items-center gap-3">
             <Button
               variant="default"
-              size="sm"
-              className="bg-slate-950 hover:bg-slate-900 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
+              size="xl"
+              className="bg-blue-900 hover:bg-slate-900 text-white rounded-full px-5 py-2 font-medium shadow-xs hover:shadow transition-all cursor-pointer"
             >
               <Link
                 href="/#contact"

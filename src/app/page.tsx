@@ -40,7 +40,7 @@ export default function Home() {
               <div className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-4 pt-2">
                 <Button
                   variant="default"
-                  size="lg"
+                  size="xl"
                   className="w-full sm:w-auto bg-slate-950 hover:bg-slate-900 text-white rounded-xl px-7 py-3.5 font-semibold shadow-sm hover:shadow-md transition-all cursor-pointer"
                 >
                   <Link href="/#contact" className="inline-flex items-center gap-2">
@@ -51,7 +51,7 @@ export default function Home() {
 
                 <Button
                   variant="outline"
-                  size="lg"
+                  size="xl"
                   className="w-full sm:w-auto border-slate-300 text-slate-800 hover:bg-slate-100 hover:text-slate-900 rounded-xl px-7 py-3.5 font-semibold transition-all cursor-pointer"
                 >
                   <Link href="/#projets" className="inline-flex items-center gap-2">
