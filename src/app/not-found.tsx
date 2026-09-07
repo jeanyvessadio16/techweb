@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Home, FolderGit2, Mail, Compass, Terminal, ShieldAlert, Sparkles } from "lucide-react";
+import { ArrowLeft, Home, FolderGit2, Mail, Compass, Terminal, ShieldAlert } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
@@ -34,11 +34,9 @@ export default function NotFound() {
 
   return (
     <main className="min-h-[85vh] w-full flex flex-col items-center justify-center bg-slate-50 relative overflow-hidden px-4 py-16 sm:py-24">
-      {/* Halos lumineux d'arrière-plan */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Pattern de fond grille discrète */}
       <div 
         className="absolute inset-0 opacity-[0.025] pointer-events-none"
         style={{
@@ -48,16 +46,13 @@ export default function NotFound() {
       />
 
       <div className="relative z-10 max-w-3xl w-full mx-auto text-center space-y-8">
-        {/* En-tête Badge & Display 404 */}
         <div className="relative inline-block">
-          {/* Badge statut */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-slate-700 text-xs sm:text-sm font-semibold tracking-wide mb-6">
             <span className="w-2 h-2 rounded-full bg-amber-500 animate-ping" />
             <ShieldAlert className="w-4 h-4 text-amber-600" />
             <span>Erreur 404 · Page non trouvée</span>
           </div>
 
-          {/* Grand 404 stylisé avec fond gradient */}
           <div className="relative select-none">
             <span className="text-8xl sm:text-9xl lg:text-[11rem] font-black text-transparent bg-clip-text bg-gradient-to-b from-blue-900 via-blue-800 to-slate-900 tracking-tighter leading-none opacity-90">
               404
@@ -68,17 +63,15 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* Message d'erreur principal */}
         <div className="space-y-3 max-w-xl mx-auto">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Oups ! Vous vous êtes aventuré en territoire inconnu.
           </h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-            La page que vous recherchez n'existe pas, a été déplacée ou n'est plus accessible temporairement.
+            La page que vous recherchez n&apos;existe pas, a été déplacée ou n&apos;est plus accessible temporairement.
           </p>
         </div>
 
-        {/* Bloc Console / Terminal Debug UI */}
         <div className="max-w-md mx-auto rounded-2xl bg-slate-900 text-slate-200 p-4 font-mono text-xs text-left shadow-xl border border-slate-800 space-y-1.5">
           <div className="flex items-center justify-between pb-2 border-b border-slate-800">
             <div className="flex items-center gap-2 text-slate-400">
@@ -102,7 +95,6 @@ export default function NotFound() {
           </div>
         </div>
 
-        {/* Boutons d'Action Principaux */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
           <Button
             variant="default"
@@ -126,10 +118,9 @@ export default function NotFound() {
           </Button>
         </div>
 
-        {/* Cartes de raccourcis rapides */}
         <div className="pt-8 border-t border-slate-200/80">
           <div className="flex items-center justify-center gap-1.5 text-xs font-semibold text-slate-500 uppercase tracking-wider mb-6">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <Compass className="w-3.5 h-3.5 text-blue-600" />
             <span>Raccourcis de navigation</span>
           </div>
           <div className="grid sm:grid-cols-3 gap-4 text-left">

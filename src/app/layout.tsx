@@ -16,30 +16,28 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://techwebjy.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Jean-Yves SADIO | Développeur Web & Expert Informatique - Niafrang (TECHWEB-JY)",
-    template: "%s | Jean-Yves SADIO - Informatique & Web Niafrang",
+    default: "Jean-Yves SADIO | Développeur Web à Niafrang, Sénégal (TECHWEB-JY)",
+    template: "%s | Jean-Yves SADIO - TECHWEB-JY",
   },
   description:
-    "Portfolio professionnel de Jean-Yves SADIO (TECHWEB-JY), Développeur Web & Etudiant en Informatique originaire de Niafrang. Conception de solutions informatiques sur-mesure, sites web modernes et applications réactives avec React, Next.js, TypeScript et Node.js.",
+    "Portfolio professionnel et marque TECHWEB-JY de Jean-Yves SADIO, Développeur Web à Niafrang (Casamance, Sénégal). Conception de sites web vitrines, applications sur-mesure, UI/UX design et maintenance réactive avec React, Next.js et Node.js.",
   keywords: [
-    "Niafrang",
     "Jean-Yves SADIO",
-    "Jean-Yves SADIO Niafrang",
-    "Informatique Niafrang",
-    "Développeur Niafrang",
-    "TECHWEB-JY Niafrang",
-    "Informatique",
-    "Développeur Informatique",
-    "Ingénieur Informatique",
-    "Solutions Informatiques",
-    "Développeur Web",
-    "Développeur React",
-    "Développeur Next.js",
-    "UI/UX Designer",
-    "Développeur Freelance Sénégal",
-    "Création site web Niafrang",
-    "Développement Front-End",
-    "Développement Full-Stack",
+    "TECHWEB-JY",
+    "Développeur Web Niafrang",
+    "Développeur Web Casamance",
+    "Développeur Web Sénégal",
+    "Création site web Sénégal",
+    "Développement d'application web Sénégal",
+    "React",
+    "Next.js",
+    "TypeScript",
+    "Node.js",
+    "PostgreSQL",
+    "Supabase",
+    "Prisma",
+    "UI/UX Design",
+    "Figma",
   ],
   authors: [{ name: "Jean-Yves SADIO", url: siteUrl }],
   creator: "Jean-Yves SADIO",
@@ -53,11 +51,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jean-Yves SADIO | Développeur Web & Etudiant en Informatique - Niafrang",
+    title: "Jean-Yves SADIO | Développeur Web à Niafrang, Sénégal - TECHWEB-JY",
     description:
-      "Portfolio de Jean-Yves SADIO (TECHWEB-JY), étudiant en Informatique et Développeur Web originaire de Niafrang. Découvrez mes projets, compétences informatiques et prestations web.",
+      "Conception de sites web modernes, applications réactives et solutions numériques sur-mesure pour entreprises, écosystèmes et entrepreneurs par Jean-Yves SADIO.",
     url: siteUrl,
-    siteName: "TECHWEB-JY - Jean-Yves SADIO (Niafrang)",
+    siteName: "TECHWEB-JY - Jean-Yves SADIO (Niafrang, Sénégal)",
     locale: "fr_FR",
     type: "website",
     images: [
@@ -71,9 +69,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jean-Yves SADIO | Développeur Web & Expert Informatique - Niafrang",
+    title: "Jean-Yves SADIO | Développeur Web à Niafrang, Sénégal - TECHWEB-JY",
     description:
-      "Portfolio de Jean-Yves SADIO (TECHWEB-JY), spécialiste en Informatique et Développeur Web à Niafrang. Projets web, développement React / Next.js & UI/UX.",
+      "Portfolio professionnel de Jean-Yves SADIO (TECHWEB-JY), développeur web à Niafrang. Projets web, React, Next.js, Node.js & UI/UX Design.",
     images: ["/logo/techwebjy-logo.png"],
     creator: "@techwebjy",
   },
@@ -100,9 +98,9 @@ const jsonLd = [
     "@type": "Person",
     name: "Jean-Yves SADIO",
     alternateName: ["Jean Yves SADIO", "Jean-Yves SADIO Niafrang", "TECHWEB-JY"],
-    jobTitle: "Développeur Web Full-Stack & Expert Informatique",
+    jobTitle: "Développeur Web Full-Stack",
     description:
-      "Spécialiste en Informatique et Développeur Web originaire de Niafrang (Sénégal). Conception d'applications web modernes, réactives et performantes.",
+      "Développeur Web à Niafrang (Casamance, Sénégal). Conception de sites web et applications réactives sur-mesure pour entreprises et entrepreneurs.",
     url: siteUrl,
     image: `${siteUrl}/images/jean-yves.png`,
     logo: `${siteUrl}/logo/techwebjy-logo.png`,
@@ -111,7 +109,7 @@ const jsonLd = [
     address: {
       "@type": "PostalAddress",
       addressLocality: "Niafrang",
-      addressRegion: "Ziguinchor",
+      addressRegion: "Casamance",
       addressCountry: "SN",
     },
     worksFor: {
@@ -125,20 +123,21 @@ const jsonLd = [
       "https://linkedin.com/in/techwebjy",
     ],
     knowsAbout: [
-      "Informatique",
-      "Génie Informatique",
-      "Niafrang",
-      "Sénégal",
+      "Développement Web",
+      "Création de sites web",
+      "Développement d'application web",
       "React",
       "Next.js",
       "TypeScript",
       "Node.js",
-      "UI/UX Design",
       "PostgreSQL",
-      "Tailwind CSS",
-      "Web Development",
+      "Supabase",
+      "Prisma",
+      "UI/UX Design",
       "SEO",
-      "Generative Engine Optimization (GEO)",
+      "Niafrang",
+      "Casamance",
+      "Sénégal",
     ],
     knowsLanguage: ["fr", "en"],
   },
@@ -163,44 +162,14 @@ const jsonLd = [
       latitude: 12.85,
       longitude: -16.65,
     },
-    areaServed: ["Niafrang", "Sénégal", "International", "Worldwide"],
+    areaServed: ["Niafrang", "Casamance", "Sénégal", "International"],
     description:
-      "Services informatiques, création de sites web et développement d'applications sur-mesure à Niafrang (Sénégal) par Jean-Yves SADIO.",
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "Qui est Jean-Yves SADIO à Niafrang ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Jean-Yves SADIO est un développeur web full-stack et expert en informatique basé à Niafrang (Sénégal), fondateur de TECHWEB-JY.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Quels sont les services proposés par TECHWEB-JY ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "TECHWEB-JY propose la création de sites web modernes, le développement d'applications web (React, Next.js, Node.js), la conception UI/UX et des prestations de conseil informatique.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Comment contacter Jean-Yves SADIO (TECHWEB-JY) ?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Vous pouvez contacter Jean-Yves SADIO par téléphone et WhatsApp au +221 76 760 02 19, par email à techwebjeanyves@gmail.com ou directement sur son site https://techwebjy.com.",
-        },
-      },
-    ],
+      "Création de sites web, développement d'applications web, UI/UX design et maintenance par Jean-Yves SADIO à Niafrang, Sénégal.",
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "TECHWEB-JY - Portfolio Jean-Yves SADIO (Niafrang)",
+    name: "TECHWEB-JY - Jean-Yves SADIO",
     url: siteUrl,
     author: {
       "@type": "Person",
@@ -210,7 +179,11 @@ const jsonLd = [
   },
 ];
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="fr"

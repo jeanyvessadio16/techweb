@@ -6,20 +6,20 @@ export const PROJECTS_DATA: Project[] = [
     title: "Fani Impact Lab",
     subtitle: "Conseil stratégique en entrepreneuriat, innovation & développement des écosystèmes",
     category: "web",
-    categoryLabel: "Plateforme Web & Conseil Stratégique",
+    categoryLabel: "Plateforme Web Institutionnelle",
     problem:
-      "Besoin d'une vitrine numérique institutionnelle et d'outils digitaux pour présenter les expertises de conseil stratégique et l'accompagnement des écosystèmes d'innovation.",
+      "Le cabinet Fani Impact Lab avait besoin d'une vitrine numérique professionnelle et crédible pour présenter son accompagnement des écosystèmes d'innovation, ses programmes d'entrepreneuriat et ses expertises auprès des partenaires institutionnels et privés.",
     solution:
-      "Conception d'une plateforme web moderne et intuitive valorisant les offres de conseil en entrepreneuriat, l'accompagnement d'écosystèmes et la transformation d'avenir.",
+      "Conception d'une plateforme web moderne et épurée sur Next.js, mettant en valeur l'identité visuelle du cabinet, la clarté de son offre de conseil et offrant un temps de chargement ultra-rapide sur mobile et ordinateur.",
     description:
       "Plateforme web officielle de Fani Impact Lab, cabinet de conseil stratégique spécialisé dans l'entrepreneuriat, l'innovation et le développement des écosystèmes.",
     imageUrl: "/images/projects/fanimpactlab.jpg",
-    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Conseil Stratégique"],
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS", "UI/UX Design", "SEO"],
     deliverables: [
       "Design d'interface moderne & institutionnel UI/UX",
-      "Présentation des expertises en entrepreneuriat et innovation",
       "Architecture web réactive et optimisée SEO",
-      "Valorisation des programmes et écosystèmes",
+      "Présentation claire des expertises en entrepreneuriat et accompagnement d'écosystèmes",
+      "Optimisation des performances d'affichage sur tous les terminaux",
     ],
     year: "2024",
     demoUrl: "https://fanimpactlab.vercel.app/",
@@ -30,20 +30,20 @@ export const PROJECTS_DATA: Project[] = [
     title: "ACCEENT Ziguinchor",
     subtitle: "Accompagnement, Éducation & Entrepreneuriat des Jeunes et Femmes",
     category: "fullstack",
-    categoryLabel: "Plateforme Sociale & Éducation",
+    categoryLabel: "Plateforme Numérique d'Impact Social",
     problem:
-      "Manque d'accès centralisé aux opportunités d'apprentissage, d'entrepreneuriat et d'inclusion numérique pour la jeunesse et les femmes de la région.",
+      "La jeunesse et les femmes de la région de Ziguinchor manquaient d'un espace numérique centralisé pour accéder aux opportunités d'apprentissage, aux programmes d'insertion professionnelle et aux ressources d'incubation.",
     solution:
-      "Création d'un portail numérique communautaire et éducatif facilitant la formation, l'insertion professionnelle et l'incubation de projets locaux.",
+      "Développement d'un portail web communautaire accessible, fluide et structuré, permettant de promouvoir les programmes de formation, de faciliter les inscriptions et d'accentuer l'inclusion numérique locale.",
     description:
       "Plateforme numérique d'impact social dédiée à l'accompagnement, la formation et l'entrepreneuriat des jeunes et des femmes de la région de Ziguinchor.",
     imageUrl: "/images/projects/acceent.jpg",
-    tags: ["Next.js", "React", "TypeScript", "UI/UX Design", "Inclusion Numérique"],
+    tags: ["Next.js", "React", "TypeScript", "UI/UX Design", "Accessibilité", "Performance"],
     deliverables: [
       "Portail web communautaire et éducatif",
-      "Ergonomie accessible & 100% responsive",
-      "Valorisation des programmes d'accompagnement",
-      "Optimisation SEO et temps de chargement ultra-rapide",
+      "Navigation intuitive & responsive Mobile-First",
+      "Valorisation des programmes d'accompagnement et des opportunités locales",
+      "Balisage SEO sémantique et temps de chargement accéléré",
     ],
     year: "2026",
     demoUrl: "https://acceent.vercel.app/",
@@ -52,8 +52,8 @@ export const PROJECTS_DATA: Project[] = [
 ];
 
 export const UPCOMING_PROJECTS_DATA: UpcomingProjectsInfo = {
-  title: "Projets en développement",
+  title: "Projets & Solutions Sur-Mesure",
   description:
-    "Je continue à développer de nouveaux projets informatiques et applications sur-mesure afin d'explorer de nouvelles technologies et concevoir des solutions numériques répondant à des besoins réels.",
-  technologiesExplored: ["TypeScript", "React", "Next.js", "Prisma", "Supabase", "PostgreSQL"],
+    "Chaque projet est conçu avec une attention particulière portée aux besoins réels du client et aux bénéfices utilisateurs. Mon architecture modulaire me permet de développer rapidement de nouvelles fonctionnalités.",
+  technologiesExplored: ["TypeScript", "React", "Next.js", "Node.js", "PostgreSQL", "Supabase", "Prisma"],
 };

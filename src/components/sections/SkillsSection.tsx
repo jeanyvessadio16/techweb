@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { SKILL_CATEGORIES } from "@/data/skills";
 import {
   SiReact,
@@ -7,6 +8,8 @@ import {
   SiHtml5,
   SiCss,
   SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
   SiGit,
   SiGithub,
   SiFigma,
@@ -16,26 +19,18 @@ import {
   SiPrisma,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import {
-  Code2,
-  Server,
-  ShieldCheck,
-  Palette,
-  MonitorSmartphone,
-  Search,
-  Compass,
-  Kanban,
-  Puzzle,
-} from "lucide-react";
+import { Code2, Server, ShieldCheck, Palette, MonitorSmartphone, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 
-// Mappage dynamique des icônes réelles (SimpleIcons, VSC, Lucide)
 const ICON_MAP: Record<string, React.ElementType> = {
   SiReact,
   SiNextdotjs,
   SiHtml5,
   SiCss,
   SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
   SiGit,
   SiGithub,
   SiFigma,
@@ -48,10 +43,6 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShieldCheck,
   Palette,
   MonitorSmartphone,
-  Search,
-  Compass,
-  Kanban,
-  Puzzle,
 };
 
 export default function SkillsSection() {
@@ -59,7 +50,6 @@ export default function SkillsSection() {
     <section id="competences" className="py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* En-tête de section épuré avec animation fade-in */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -68,30 +58,28 @@ export default function SkillsSection() {
           className="text-center max-w-3xl mx-auto mb-14 sm:mb-16"
         >
           <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-800 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4">
-            Stack Technique & Savoir-Faire
+            Compétences & Technologies
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            Stack technique & Compétences
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight">
+            Les technologies au service de votre projet
           </h2>
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Les technologies et outils que j&apos;utilise au quotidien pour concevoir des applications web réactives, rapides et ergonomiques.
+            Une maîtrise complète des outils modernes pour créer des interfaces réactives, des serveurs sécurisés et des bases de données performantes.
           </p>
         </motion.div>
 
-        {/* Grille moderne des compétences par catégorie avec animations staggered */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SKILL_CATEGORIES.map((category, catIdx) => (
+          {SKILL_CATEGORIES.slice(0, 3).map((category, catIdx) => (
             <motion.div
               key={category.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
               transition={{ duration: 0.5, delay: catIdx * 0.1, ease: "easeOut" }}
-              className="flex flex-col bg-slate-50/70 border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-2xs hover:border-slate-300 transition-all"
+              className="flex flex-col bg-slate-50/70 border border-slate-200/90 rounded-3xl p-6 sm:p-7 shadow-2xs hover:border-slate-300 transition-all"
             >
-              {/* Entête de catégorie */}
               <div className="mb-6 pb-4 border-b border-slate-200/80">
-                <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                <h3 className="text-xl font-bold text-slate-950 tracking-tight">
                   {category.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-500 mt-1 leading-relaxed">
@@ -99,41 +87,50 @@ export default function SkillsSection() {
                 </p>
               </div>
 
-              {/* Liste des cartes de compétences avec vrais logos et hover effect */}
-              <div className="space-y-3.5 flex-1">
-                {category.skills.map((skill) => {
+              <div className="space-y-3 flex-1">
+                {category.skills.slice(0, 4).map((skill) => {
                   const IconComponent = skill.iconName ? ICON_MAP[skill.iconName] || Code2 : Code2;
 
                   return (
-                    <motion.div
+                    <div
                       key={skill.id}
-                      whileHover={{ x: 4 }}
-                      transition={{ duration: 0.15 }}
-                      className="bg-white border border-slate-200/80 rounded-xl p-3.5 shadow-2xs hover:border-slate-300 hover:shadow-xs transition-all flex items-start gap-3.5 group cursor-default"
+                      className="bg-white border border-slate-200/80 rounded-xl p-3.5 shadow-2xs flex items-start gap-3.5"
                     >
-                      {/* Conteneur d'icône avec le vrai logo */}
-                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-105 transition-transform">
+                      <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-center shrink-0 mt-0.5">
                         <IconComponent
-                          className="w-5 h-5 transition-transform"
+                          className="w-5 h-5"
                           style={{ color: skill.color || "#1e3a8a" }}
                         />
                       </div>
                       <div>
-                        <h4 className="text-sm font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
+                        <h4 className="text-sm font-bold text-slate-950">
                           {skill.name}
                         </h4>
-                        {skill.description && (
-                          <p className="text-xs text-slate-500 mt-0.5 leading-relaxed">
-                            {skill.description}
+                        {skill.benefit && (
+                          <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                            {skill.benefit}
                           </p>
                         )}
                       </div>
-                    </motion.div>
+                    </div>
                   );
                 })}
               </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-slate-300 text-slate-950 hover:bg-slate-100 font-bold rounded-xl px-8 py-3.5 cursor-pointer"
+          >
+            <Link href="/competences" className="inline-flex items-center gap-2">
+              <span>Voir toutes mes compétences en détail</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </Button>
         </div>
 
       </div>

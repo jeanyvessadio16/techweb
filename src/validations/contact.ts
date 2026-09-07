@@ -1,9 +1,6 @@
 import { z } from "zod";
 
-// Regex pour valider le nom (lettres, espaces, tirets, apôtrophes et caractères accentués)
 const nameRegex = /^[a-zA-Zà-ÿÀ-Ÿ\s'-]+$/;
-
-// Regex pour valider un numéro de téléphone (optionnel, formats internationaux ou locaux)
 const phoneRegex = /^(?:\+?\d{1,4}[-.\s]?)?\(?\d{1,3}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
 
 export const contactSchema = z.object({
@@ -26,9 +23,12 @@ export const contactSchema = z.object({
       { message: "Veuillez saisir un numéro de téléphone valide." }
     ),
 
-  subject: z
+  projectType: z
     .string()
-    .max(150, { message: "Le sujet ne peut pas dépasser 150 caractères." })
+    .min(1, { message: "Veuillez sélectionner un type de projet." }),
+
+  budget: z
+    .string()
     .optional(),
 
   message: z

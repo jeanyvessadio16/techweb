@@ -11,12 +11,12 @@ export default function Footer() {
   };
 
   const footerLinks = [
-    { label: "Accueil", href: "/#hero" },
-    { label: "Services", href: "/#services" },
-    { label: "Compétences", href: "/#competences" },
-    { label: "À propos", href: "/#a-propos" },
-    { label: "Projets", href: "/#projets" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Accueil", href: "/" },
+    { label: "Services", href: "/services" },
+    { label: "Compétences", href: "/competences" },
+    { label: "À propos", href: "/about" },
+    { label: "Projets", href: "/projets" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
@@ -28,8 +28,8 @@ export default function Footer() {
           {/* Colonne 1 : Marque & Identification */}
           <div className="md:col-span-5 flex flex-col items-center md:items-start text-center md:text-left space-y-4">
             <Link
-              href="/#hero"
-              className="inline-block bg-white/95 backdrop-blur-md rounded-xl p-2 shadow-xs transition-transform hover:scale-105"
+              href="/"
+              className="inline-block bg-white rounded-xl p-2.5 shadow-xs transition-transform hover:scale-105"
             >
               <Image
                 src="/logo/techwebjy-logo.png"
@@ -39,8 +39,8 @@ export default function Footer() {
                 className="h-8 sm:h-9 w-auto object-contain"
               />
             </Link>
-            <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Jean-Yves SADIO — Développeur Web & Expert Informatique (Niafrang, Sénégal). Conception d&apos;interfaces modernes, rapides et performantes.
+            <p className="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+              TECHWEB-JY — Développement web moderne et solutions numériques sur mesure par Jean-Yves SADIO (Niafrang, Casamance, Sénégal).
             </p>
 
             {/* Liens réseaux sociaux */}
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://github.com/techwebjy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="GitHub"
+                aria-label="GitHub de Jean-Yves SADIO"
                 className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
               >
                 <FaGithub className="w-4 h-4" />
@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://linkedin.com/in/techwebjy"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="LinkedIn de Jean-Yves SADIO"
                 className="w-9 h-9 rounded-full bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:bg-slate-800 hover:border-slate-700 transition-all flex items-center justify-center cursor-pointer"
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Colonne 2 : Navigation rapide */}
+          {/* Colonne 2 : Navigation principale */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left space-y-3">
             <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
               Navigation
@@ -87,10 +87,10 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Colonne 3 : Coordonnées lisibles en texte */}
+          {/* Colonne 3 : Coordonnées et localisation */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left space-y-3.5">
             <h3 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
-              Coordonnées
+              Contact & Localisation
             </h3>
             <div className="flex flex-col space-y-3 text-sm">
               <a
@@ -117,16 +117,16 @@ export default function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span>Niafrang, Sénégal</span>
+                <span>Niafrang · Casamance · Sénégal</span>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Bas de page : Copyright & Retour en haut */}
+        {/* Bas de page : Copyright exact & Retour en haut */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} TECHWEB-JY (Jean-Yves SADIO). Tous droits réservés.</p>
+          <p>© 2026 TECHWEB-JY — Jean-Yves SADIO. Tous droits réservés.</p>
 
           <button
             onClick={scrollToTop}

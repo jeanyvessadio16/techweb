@@ -4,8 +4,12 @@ export interface ServiceItem {
   badge: string;
   shortDescription: string;
   fullDescription: string;
-  iconName: string;
+  problem: string;
+  solution: string;
+  benefits: string[];
+  targetAudience: string[];
   deliverables: string[];
   technologies: string[];
+  iconName: string;
   highlightColor?: string;
 }

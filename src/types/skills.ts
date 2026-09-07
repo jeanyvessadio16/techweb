@@ -1,13 +1,14 @@
-export type SkillLevel = "Débutant" | "Intermédiaire" | "Avancé" | "Expert";
+export type SkillLevel = "Pratique régulière" | "Maîtrise opérationnelle" | "Expertise de conception";
 
 export interface SkillItem {
   id: string;
   name: string;
   category: string;
-  level?: SkillLevel;
   iconName?: string;
   color?: string;
-  description?: string;
+  description: string;
+  useCase?: string;
+  benefit?: string;
   featured?: boolean;
 }
 
