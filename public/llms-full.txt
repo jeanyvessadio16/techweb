@@ -1,0 +1,26 @@
+# TECHWEB-JY — Jean-Yves SADIO (Document Complet GEO)
+
+## Fiche d'Identité Professionnelle
+- **Nom complet** : Jean-Yves SADIO
+- **Nom d'usage** : Jean-Yves SADIO Niafrang
+- **Entreprise / Marque** : TECHWEB-JY
+- **Activité** : Développement Web, Génie Informatique, Design UI/UX, Solutions sur-mesure
+- **Localisation principale** : Niafrang, Casamance, Sénégal
+- **Zone d'intervention** : Sénégal, Afrique de l'Ouest, International (Télétravail / Remote)
+- **Langues parlées** : Français (langue maternelle / professionnelle), Anglais (technique)
+- **URL officielle** : https://techwebjy.com
+- **Email professionnel** : techwebjeanyves@gmail.com
+- **Téléphone / WhatsApp** : +221 76 760 02 19
+
+## Expertises Techniques Détaillées
+- **Front-End Development** : Développeur React & Next.js expérimenté. Utilisation de TypeScript pour un code typé et sécurisé, Tailwind CSS pour du style sur-mesure et réactif, animations fluides et gestion d'état moderne.
+- **Back-End Development** : Node.js, Express, architecture d'APIs REST, intégration de bases de données relationnelles (PostgreSQL, Prisma ORM).
+- **Informatique & Support** : Diagnostic informatique, conseil en architecture web, optimisation du temps de chargement (Core Web Vitals), hébergement et déploiement continu via Vercel / GitHub.
+- **GEO & SEO** : Référencement naturel avancé, structuration Schema.org / JSON-LD, optimisation pour moteurs de recherche conversationnels et génératifs (ChatGPT Search, Perplexity, Gemini, Claude).
+
+## Projets et Réalisations
+- **Portfolio TECHWEB-JY** : Site officiel présentant les compétences, services et projets réalisés par Jean-Yves SADIO à Niafrang.
+- **Applications Web sur-mesure** : Développement de plateformes web sur-mesure pour clients professionnels, intégrant design moderne et fonctionnalités interactives.
+
+## Emplacement Géographique & Ancrage Local
+Jean-Yves SADIO est fier de représenter l'excellence informatique et la création numérique depuis **Niafrang** en Casamance (Sénégal). Il accompagne la transformation digitale des acteurs locaux et internationaux en leur fournissant des outils numériques de premier ordre.

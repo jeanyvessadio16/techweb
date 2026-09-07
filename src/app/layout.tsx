@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Jean-Yves SADIO - Informatique & Web Niafrang",
   },
   description:
-    "Portfolio professionnel de Jean-Yves SADIO (TECHWEB-JY), Développeur Web & Expert en Informatique originaire de Niafrang. Conception de solutions informatiques sur-mesure, sites web modernes et applications réactives avec React, Next.js, TypeScript et Node.js.",
+    "Portfolio professionnel de Jean-Yves SADIO (TECHWEB-JY), Développeur Web & Etudiant en Informatique originaire de Niafrang. Conception de solutions informatiques sur-mesure, sites web modernes et applications réactives avec React, Next.js, TypeScript et Node.js.",
   keywords: [
     "Niafrang",
     "Jean-Yves SADIO",
@@ -53,19 +53,28 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Jean-Yves SADIO | Développeur Web & Expert Informatique - Niafrang",
+    title: "Jean-Yves SADIO | Développeur Web & Etudiant en Informatique - Niafrang",
     description:
-      "Portfolio de Jean-Yves SADIO (TECHWEB-JY), spécialiste en Informatique et Développeur Web originaire de Niafrang. Découvrez mes projets, compétences informatiques et prestations web.",
+      "Portfolio de Jean-Yves SADIO (TECHWEB-JY), étudiant en Informatique et Développeur Web originaire de Niafrang. Découvrez mes projets, compétences informatiques et prestations web.",
     url: siteUrl,
     siteName: "TECHWEB-JY - Jean-Yves SADIO (Niafrang)",
     locale: "fr_FR",
     type: "website",
+    images: [
+      {
+        url: "/logo/techwebjy-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Logo TECHWEB-JY - Jean-Yves SADIO",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jean-Yves SADIO | Développeur Web & Expert Informatique - Niafrang",
     description:
       "Portfolio de Jean-Yves SADIO (TECHWEB-JY), spécialiste en Informatique et Développeur Web à Niafrang. Projets web, développement React / Next.js & UI/UX.",
+    images: ["/logo/techwebjy-logo.png"],
     creator: "@techwebjy",
   },
   robots: {
@@ -81,6 +90,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico",
+    apple: "/logo/techwebjy-logo.png",
   },
 };
 
@@ -89,21 +99,26 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Jean-Yves SADIO",
-    alternateName: "Jean Yves SADIO",
-    jobTitle: "Développeur Web & Expert Informatique",
-    description: "Spécialiste en Informatique et Développeur Web originaire de Niafrang.",
+    alternateName: ["Jean Yves SADIO", "Jean-Yves SADIO Niafrang", "TECHWEB-JY"],
+    jobTitle: "Développeur Web Full-Stack & Expert Informatique",
+    description:
+      "Spécialiste en Informatique et Développeur Web originaire de Niafrang (Sénégal). Conception d'applications web modernes, réactives et performantes.",
     url: siteUrl,
     image: `${siteUrl}/images/jean-yves.png`,
+    logo: `${siteUrl}/logo/techwebjy-logo.png`,
     email: "techwebjeanyves@gmail.com",
     telephone: "+221767600219",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Niafrang",
+      addressRegion: "Ziguinchor",
       addressCountry: "SN",
     },
     worksFor: {
       "@type": "Organization",
       name: "TECHWEB-JY",
+      url: siteUrl,
+      logo: `${siteUrl}/logo/techwebjy-logo.png`,
     },
     sameAs: [
       "https://github.com/techwebjy",
@@ -113,6 +128,7 @@ const jsonLd = [
       "Informatique",
       "Génie Informatique",
       "Niafrang",
+      "Sénégal",
       "React",
       "Next.js",
       "TypeScript",
@@ -121,6 +137,64 @@ const jsonLd = [
       "PostgreSQL",
       "Tailwind CSS",
       "Web Development",
+      "SEO",
+      "Generative Engine Optimization (GEO)",
+    ],
+    knowsLanguage: ["fr", "en"],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: "TECHWEB-JY - Jean-Yves SADIO",
+    image: `${siteUrl}/logo/techwebjy-logo.png`,
+    logo: `${siteUrl}/logo/techwebjy-logo.png`,
+    url: siteUrl,
+    telephone: "+221767600219",
+    email: "techwebjeanyves@gmail.com",
+    priceRange: "$$",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Niafrang",
+      addressRegion: "Casamance",
+      addressCountry: "SN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 12.85,
+      longitude: -16.65,
+    },
+    areaServed: ["Niafrang", "Sénégal", "International", "Worldwide"],
+    description:
+      "Services informatiques, création de sites web et développement d'applications sur-mesure à Niafrang (Sénégal) par Jean-Yves SADIO.",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Qui est Jean-Yves SADIO à Niafrang ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Jean-Yves SADIO est un développeur web full-stack et expert en informatique basé à Niafrang (Sénégal), fondateur de TECHWEB-JY.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Quels sont les services proposés par TECHWEB-JY ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "TECHWEB-JY propose la création de sites web modernes, le développement d'applications web (React, Next.js, Node.js), la conception UI/UX et des prestations de conseil informatique.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Comment contacter Jean-Yves SADIO (TECHWEB-JY) ?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Vous pouvez contacter Jean-Yves SADIO par téléphone et WhatsApp au +221 76 760 02 19, par email à techwebjeanyves@gmail.com ou directement sur son site https://techwebjy.com.",
+        },
+      },
     ],
   },
   {
@@ -143,6 +217,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${poppins.variable} min-h-screen antialiased overflow-x-hidden w-full max-w-full`}
     >
       <head>
+        <link rel="author" type="text/plain" href="/llms.txt" title="LLMs Info (GEO)" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
