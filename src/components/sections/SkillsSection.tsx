@@ -20,6 +20,9 @@ import {
   SiGoogledrive,
   SiGooglemeet,
   SiGooglecalendar,
+  SiGooglegemini,
+  SiGithubcopilot,
+  SiPerplexity,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { Code2, Server, ShieldCheck, Palette, MonitorSmartphone, ArrowRight } from "lucide-react";
@@ -49,6 +52,9 @@ const ICON_MAP: Record<string, React.ElementType> = {
   SiGoogledrive,
   SiGooglemeet,
   SiGooglecalendar,
+  SiGooglegemini,
+  SiGithubcopilot,
+  SiPerplexity,
 };
 
 export default function SkillsSection() {

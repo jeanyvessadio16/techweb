@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SKILL_CATEGORIES } from "@/data/skills";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Code2, Server, Database, Palette, Wrench, Monitor, Smartphone } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Server, Database, Palette, Wrench, Monitor, Smartphone, BrainCircuit } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Compétences & Expertises Techniques | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
@@ -27,6 +27,7 @@ const CATEGORY_ICONS: Record<string, React.ElementType> = {
   tools: Wrench,
   bureautique: Monitor,
   "outils-numeriques": Smartphone,
+  "intelligence-artificielle": BrainCircuit,
 };
 
 export default function CompetencesPage() {
