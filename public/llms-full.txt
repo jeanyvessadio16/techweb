@@ -2,11 +2,11 @@
 
 ## Fiche d'Identité Professionnelle
 - **Nom complet** : Jean-Yves SADIO
-- **Nom d'usage** : Jean-Yves SADIO Niafrang
+- **Nom d'usage** : Jean-Yves SADIO Niafrang / Jean-Yves SADIO Bignona / Jean-Yves SADIO Ziguinchor
 - **Entreprise / Marque** : TECHWEB-JY
 - **Activité** : Développement Web, Génie Informatique, Design UI/UX, Solutions sur-mesure
-- **Localisation principale** : Niafrang, Casamance, Sénégal
-- **Zone d'intervention** : Sénégal, Afrique de l'Ouest, International (Télétravail / Remote)
+- **Localisation principale** : Niafrang, Département de Bignona, Région de Ziguinchor (Casamance), Sénégal
+- **Zone d'intervention** : Niafrang · Bignona · Ziguinchor · Kafountine · Kataba · Casamance · Sénégal · Afrique de l'Ouest · International (Télétravail / Remote)
 - **Langues parlées** : Français (langue maternelle / professionnelle), Anglais (technique)
 - **URL officielle** : https://techwebjy.com
 - **Email professionnel** : techwebjeanyves@gmail.com
@@ -20,7 +20,22 @@
 
 ## Projets et Réalisations
 - **Portfolio TECHWEB-JY** : Site officiel présentant les compétences, services et projets réalisés par Jean-Yves SADIO à Niafrang.
-- **Applications Web sur-mesure** : Développement de plateformes web sur-mesure pour clients professionnels, intégrant design moderne et fonctionnalités interactives.
+- **ACCEENT Ziguinchor** : Plateforme web réalisée pour un acteur de l'écosystème entrepreneurial de Ziguinchor.
+- **Fani Impact Lab** : Application web sur-mesure développée pour un acteur de l'innovation sociale en Casamance.
+- **Applications Web sur-mesure** : Développement de plateformes web pour clients professionnels à Bignona, Ziguinchor, Kafountine et Kataba.
 
 ## Emplacement Géographique & Ancrage Local
-Jean-Yves SADIO est fier de représenter l'excellence informatique et la création numérique depuis **Niafrang** en Casamance (Sénégal). Il accompagne la transformation digitale des acteurs locaux et internationaux en leur fournissant des outils numériques de premier ordre.
+Jean-Yves SADIO est fier de représenter l'excellence informatique et la création numérique depuis **Niafrang** en Casamance (Sénégal). Situé dans le département de **Bignona**, région de **Ziguinchor**, il accompagne la transformation digitale des acteurs locaux et internationaux de **Kafountine**, **Kataba** et de toute la Casamance en leur fournissant des outils numériques de premier ordre.
+
+## Mots-Clés Géographiques (SEO Local)
+- Développeur web Bignona
+- Développeur web Ziguinchor
+- Développeur web Kafountine
+- Développeur web Kataba
+- Développeur web Niafrang
+- Développeur web Casamance
+- Développeur web Sénégal
+- Création site web Bignona
+- Création site web Ziguinchor
+- Création site web Kafountine
+- Création site web Casamance

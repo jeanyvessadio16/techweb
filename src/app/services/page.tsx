@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICES_DATA } from "@/data/services";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Globe, LayoutGrid, Palette, Wrench, AlertCircle, Lightbulb } from "lucide-react";
+import { ArrowRight, CheckCircle2, Globe, LayoutGrid, AlertCircle, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services & Prestations Web | Jean-Yves SADIO - TECHWEB-JY",
+  title: "Services & Prestations Web | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
   description:
-    "Services complets de développement web à Niafrang (Casamance, Sénégal) : création de sites vitrines et institutionnels, développement d'applications web métier, UI/UX design sur Figma, et maintenance/optimisation SEO.",
+    "Services complets de développement web à Niafrang, Bignona, Ziguinchor, Kafountine et Kataba (Casamance, Sénégal) : création de sites vitrines, applications web métier et solutions sur-mesure.",
   alternates: {
     canonical: "/services",
   },
   openGraph: {
-    title: "Services Web sur-mesure | Jean-Yves SADIO (TECHWEB-JY)",
+    title: "Services Web sur-mesure | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
     description:
-      "Création de sites web, applications métier, UI/UX design et optimisation de performance à Niafrang, Casamance, Sénégal.",
+      "Création de sites web et applications métier sur-mesure à Niafrang, Bignona, Ziguinchor, Kafountine, Kataba, Casamance, Sénégal.",
     url: "https://techwebjy.com/services",
   },
 };
@@ -22,8 +22,6 @@ export const metadata: Metadata = {
 const SERVICE_ICONS: Record<string, React.ElementType> = {
   Globe,
   LayoutGrid,
-  Palette,
-  Wrench,
 };
 
 export default function ServicesPage() {

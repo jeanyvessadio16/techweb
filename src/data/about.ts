@@ -4,7 +4,7 @@ export const ABOUT_DATA: AboutData = {
   title: "À propos de Jean-Yves SADIO",
   subtitle: "Développeur Web & Fondateur de TECHWEB-JY · Niafrang, Sénégal",
   paragraphs: [
-    "Je suis Jean-Yves SADIO, développeur web indépendant basé à Niafrang, dans la région de la Casamance au Sénégal. À travers ma marque TECHWEB-JY, j'accompagne les entreprises, organisations, entrepreneurs et porteurs de projets dans la création de solutions numériques sur-mesure, rapides et centrées sur l'utilisateur.",
+    "Je suis Jean-Yves SADIO, développeur web basé à Niafrang, dans le département de Bignona, la région de Ziguinchor au sud du Sénégal. À travers ma marque TECHWEB-JY, je crée des solutions numériques, rapides et centrées sur l'utilisateur.",
     "Mon objectif n'est pas simplement de livrer du code, mais de résoudre de véritables problèmes métiers : améliorer votre visibilité, structurer vos données, automatiser vos tâches et convertir vos visiteurs en clients fidèles. Pour y parvenir, je privilégie des technologies modernes et éprouvées comme React, Next.js, TypeScript, Node.js, PostgreSQL et Figma.",
     "Chaque projet web commence par une phase d'écoute et d'analyse approfondie de votre besoin. Que vous ayez besoin d'un site vitrine institutionnel, d'une plateforme d'apprentissage ou d'un outil métier sur-mesure, je conçois des interfaces durables, élégantes et faciles à maintenir.",
   ],

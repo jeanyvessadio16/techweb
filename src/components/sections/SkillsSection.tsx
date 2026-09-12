@@ -17,6 +17,9 @@ import {
   SiPostgresql,
   SiSupabase,
   SiPrisma,
+  SiGoogledrive,
+  SiGooglemeet,
+  SiGooglecalendar,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { Code2, Server, ShieldCheck, Palette, MonitorSmartphone, ArrowRight } from "lucide-react";
@@ -43,13 +46,16 @@ const ICON_MAP: Record<string, React.ElementType> = {
   ShieldCheck,
   Palette,
   MonitorSmartphone,
+  SiGoogledrive,
+  SiGooglemeet,
+  SiGooglecalendar,
 };
 
 export default function SkillsSection() {
   return (
     <section id="competences" className="py-20 sm:py-28 bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

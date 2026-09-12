@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, ShieldCheck, Zap, MessageSquare, TrendingUp, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "À propos de Jean-Yves SADIO | Développeur Web Niafrang - TECHWEB-JY",
+  title: "À propos de Jean-Yves SADIO | Développeur Web Bignona & Ziguinchor - TECHWEB-JY",
   description:
-    "Découvrez le parcours, la vision et l'approche sur-mesure de Jean-Yves SADIO, développeur web indépendant basé à Niafrang (Casamance, Sénégal), fondateur de la marque TECHWEB-JY.",
+    "Parcours, vision et approche sur-mesure de Jean-Yves SADIO, développeur web indépendant à Niafrang (Bignona, Ziguinchor, Casamance, Sénégal), fondateur de la marque TECHWEB-JY.",
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "À propos de Jean-Yves SADIO | Développeur Web Niafrang",
+    title: "À propos de Jean-Yves SADIO | Développeur Web Bignona & Ziguinchor",
     description:
-      "Histoire, valeurs professionnelles et approche sur-mesure de Jean-Yves SADIO (TECHWEB-JY) à Niafrang, Casamance, Sénégal.",
+      "Histoire, valeurs professionnelles et approche sur-mesure de Jean-Yves SADIO (TECHWEB-JY) à Niafrang, Bignona, Ziguinchor, Casamance, Sénégal.",
     url: "https://techwebjy.com/about",
   },
 };

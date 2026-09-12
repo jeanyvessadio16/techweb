@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SKILL_CATEGORIES } from "@/data/skills";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Code2, Server, Database, Palette, Wrench } from "lucide-react";
+import { ArrowRight, CheckCircle2, Code2, Server, Database, Palette, Wrench, Monitor, Smartphone } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Compétences & Expertises Techniques | Jean-Yves SADIO - TECHWEB-JY",
+  title: "Compétences & Expertises Techniques | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
   description:
-    "Compétences informatiques et technologies maîtrisées par Jean-Yves SADIO (Développeur Web à Niafrang, Sénégal) : React, Next.js, TypeScript, Node.js, PostgreSQL, Supabase, Prisma, UI/UX Design.",
+    "Compétences informatiques de Jean-Yves SADIO, développeur web à Niafrang, Bignona, Ziguinchor, Kafountine et Kataba (Sénégal) : React, Next.js, TypeScript, Node.js, PostgreSQL, UI/UX Design.",
   alternates: {
     canonical: "/competences",
   },
   openGraph: {
-    title: "Compétences & Technologies Web | Jean-Yves SADIO (TECHWEB-JY)",
+    title: "Compétences & Technologies Web | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
     description:
-      "Stack technique moderne pour le développement web front-end, back-end, bases de données et design d'interfaces à Niafrang, Sénégal.",
+      "Stack technique moderne pour le développement web front-end, back-end, bases de données et design d'interfaces à Niafrang, Bignona, Ziguinchor, Kafountine et Kataba, Sénégal.",
     url: "https://techwebjy.com/competences",
   },
 };
@@ -25,6 +25,8 @@ const CATEGORY_ICONS: Record<string, React.ElementType> = {
   database: Database,
   design: Palette,
   tools: Wrench,
+  bureautique: Monitor,
+  "outils-numeriques": Smartphone,
 };
 
 export default function CompetencesPage() {

@@ -2,15 +2,13 @@
 
 import Link from "next/link";
 import { SERVICES_DATA } from "@/data/services";
-import { Globe, LayoutGrid, Palette, Wrench, CheckCircle2, ArrowRight } from "lucide-react";
+import { Globe, LayoutGrid, CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "motion/react";
 
 const SERVICE_ICONS: Record<string, React.ElementType> = {
   Globe,
   LayoutGrid,
-  Palette,
-  Wrench,
 };
 
 export default function ServicesSection() {

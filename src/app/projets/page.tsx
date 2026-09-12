@@ -6,16 +6,16 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, CheckCircle2, ArrowRight, FolderGit2, AlertCircle, Lightbulb } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Projets & Portfolio Web | Jean-Yves SADIO - TECHWEB-JY",
+  title: "Projets & Portfolio Web | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
   description:
-    "Découvrez les réalisations et cas d'études de Jean-Yves SADIO (Fani Impact Lab, ACCEENT Ziguinchor). Plateformes web, applications réactives et solutions sur-mesure développées à Niafrang, Sénégal.",
+    "Réalisations de Jean-Yves SADIO (Fani Impact Lab, ACCEENT Ziguinchor). Plateformes web, applications réactives et solutions sur-mesure développées à Niafrang, Bignona et Ziguinchor, Sénégal.",
   alternates: {
     canonical: "/projets",
   },
   openGraph: {
-    title: "Portfolio & Realisations Web | Jean-Yves SADIO (TECHWEB-JY)",
+    title: "Portfolio & Realisations Web | Jean-Yves SADIO - Développeur Web Bignona & Ziguinchor",
     description:
-      "Études de cas réelles et projets web développés avec React, Next.js, TypeScript et Tailwind CSS.",
+      "Études de cas réelles et projets web développés avec React, Next.js, TypeScript et Tailwind CSS à Niafrang, Bignona, Ziguinchor, Casamance, Sénégal.",
     url: "https://techwebjy.com/projets",
   },
 };
